@@ -108,7 +108,7 @@ namespace Movie_DataBase
             this.cmbTypeAutor.Size = new System.Drawing.Size(295, 28);
             this.cmbTypeAutor.TabIndex = 5;
             this.cmbTypeAutor.Tag = "";
-            this.cmbTypeAutor.Text = "Проверка подлинности SQL Server";
+            this.cmbTypeAutor.Text = "Проверка подлинности Windows";
             this.cmbTypeAutor.SelectedIndexChanged += new System.EventHandler(this.cmbTypeAutor_SelectionChangeCommitted);
             this.cmbTypeAutor.SelectionChangeCommitted += new System.EventHandler(this.cmbTypeAutor_SelectionChangeCommitted);
             // 
@@ -118,6 +118,7 @@ namespace Movie_DataBase
             this.txtNameSrv.Name = "txtNameSrv";
             this.txtNameSrv.Size = new System.Drawing.Size(295, 26);
             this.txtNameSrv.TabIndex = 6;
+            this.txtNameSrv.Text = "(localdb)\\MSSQLLocalDB";
             // 
             // txtNameDB
             // 
@@ -125,6 +126,7 @@ namespace Movie_DataBase
             this.txtNameDB.Name = "txtNameDB";
             this.txtNameDB.Size = new System.Drawing.Size(295, 26);
             this.txtNameDB.TabIndex = 7;
+            this.txtNameDB.Text = "Movie";
             // 
             // txtUserName
             // 

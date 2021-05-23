@@ -10,6 +10,8 @@ namespace Movie_DataBase {
             cmbTypeAutor.Items.Add("Проверка подлинности Windows");
             cmbTypeAutor.Items.Add("Проверка подлинности SQL Server");
             //cmbTypeAutor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            txtUserName.Enabled = false;
+            txtPass.Enabled = false;
         }
 
         private void Form1_Load(object sender, EventArgs e) {
