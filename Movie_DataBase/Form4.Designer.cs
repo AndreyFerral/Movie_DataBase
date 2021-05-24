@@ -40,7 +40,7 @@
             this.text1.Name = "text1";
             this.text1.Size = new System.Drawing.Size(277, 26);
             this.text1.TabIndex = 8;
-            this.text1.TextChanged += new System.EventHandler(this.text1_TextChanged);
+            this.text1.TextChanged += new System.EventHandler(this.text1_TextChanged_1);
             // 
             // label1
             // 
@@ -52,7 +52,6 @@
             this.label1.Size = new System.Drawing.Size(214, 20);
             this.label1.TabIndex = 7;
             this.label1.Text = "Наименование прокатчика";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button1
             // 

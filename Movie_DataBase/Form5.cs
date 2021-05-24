@@ -53,17 +53,20 @@ namespace Movie_DataBase
         {
             try
             {
-                DialogResult result = MessageBox.Show("Будет удалена вся " + "информация о фильме. Продолжить?", "Внимание!", MessageBoxButtons.YesNo);
+                DialogResult result = MessageBox.Show("Будет удалена вся информация о фильме. Продолжить?", "Внимание!", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
                     // Создать команду для удаления
                     SqlCommand myComm = new SqlCommand("delete dbo.Фильм where idФильм = @p1", myConn);
+
                     // Создать параметр и передать в него значение текстового поля 
                     myComm.Parameters.Add("@p1", SqlDbType.NVarChar, 10);
                     DataGridViewRow SelectedRow = dataGridView1.Rows[indexSelectRow];
                     myComm.Parameters["@p1"].Value = SelectedRow.Cells[0].Value.ToString();
+
                     // Выполнить запрос на удаление без возвращения результата
                     myComm.ExecuteNonQuery();
+
                     // Обновить таблицу на форме
                     loadData();
                 }
@@ -89,6 +92,20 @@ namespace Movie_DataBase
         {
             Form8 form8 = new Form8(myConn);
             form8.ShowDialog();
+
+            loadData();
+        }
+
+        private void добавлениеЖанраИлиРежиссераToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow SelectedRow = dataGridView1.Rows[indexSelectRow];
+            string numberFilm = SelectedRow.Cells[0].Value.ToString();
+            string nameFilm = SelectedRow.Cells[1].Value.ToString();
+            string description = SelectedRow.Cells[2].Value.ToString();
+            string howmuch = SelectedRow.Cells[3].Value.ToString();
+
+            Form12 form12 = new Form12(numberFilm, nameFilm, description, howmuch);
+            form12.ShowDialog();
 
             loadData();
         }

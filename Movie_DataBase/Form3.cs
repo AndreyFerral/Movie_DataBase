@@ -15,21 +15,23 @@ namespace Movie_DataBase
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            //Получаем строку подключения из параметров
+            // Получаем строку подключения из параметров
             string StrConn = Properties.Settings.Default.ConnStr.ToString();
-            //Создаем подключение 
+
+            // Создаем подключение 
             myConn.ConnectionString = StrConn; 
             myConn.Open();
-            //Запускаем процедуру выборки данных
-            loadData();
 
+            // Запускаем процедуру выборки данных
+            loadData();
         }
 
         private void loadData() {
-            //Создаем команду для выборки данных
+            // Создаем команду для выборки данных
             SqlCommand myComm = new SqlCommand("select*from dbo.Прокатчик", myConn); 
             SqlDataReader myReader = myComm.ExecuteReader();
-            //Заполняем данными
+
+            // Заполняем данными
             DataTable dt = new DataTable(); dt.Load(myReader); 
             dataGridView1.AutoGenerateColumns = false; dataGridView1.DataSource = dt; dataGridView1.Refresh();
         }
@@ -42,11 +44,7 @@ namespace Movie_DataBase
 
         private void Form3_FormClosing(object sender, FormClosingEventArgs e) {
             myConn.Close();
-        }
-
-        private void toolStripLabel1_Click(object sender, EventArgs e)
-        {
-
+            Application.Exit();
         }
 
         private void изменениеToolStripMenuItem_Click(object sender, EventArgs e)
@@ -76,12 +74,15 @@ namespace Movie_DataBase
                 {
                     // Создать команду для удаления
                     SqlCommand myComm = new SqlCommand("delete dbo.Прокатчик where idПрокатчик = @p1", myConn);
+
                     // Создать параметр и передать в него значение текстового поля 
                     myComm.Parameters.Add("@p1", SqlDbType.NVarChar, 10);
                     DataGridViewRow SelectedRow = dataGridView1.Rows[indexSelectRow];
                     myComm.Parameters["@p1"].Value = SelectedRow.Cells[0].Value.ToString();
+
                     // Выполнить запрос на удаление без возвращения результата
                     myComm.ExecuteNonQuery();
+
                     // Обновить таблицу на форме
                     loadData();
                 }
@@ -94,9 +95,8 @@ namespace Movie_DataBase
         {
             Form4 form4 = new Form4(myConn);
             form4.ShowDialog();
-            //обновить таблицу на форме
-            loadData();
 
+            loadData();
         }
 
         private void назадToolStripMenuItem_Click(object sender, EventArgs e)

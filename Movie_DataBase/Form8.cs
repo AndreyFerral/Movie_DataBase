@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Movie_DataBase
@@ -24,12 +18,14 @@ namespace Movie_DataBase
         {
             try
             {
-                if (text1.Text.Trim() == "" || text2.Text.Trim() == "" || text3.Text.Trim() == "" || text4.Text.Trim() == "" || text5.Text.Trim() == "") throw new Exception();
+                if (text1.Text.Trim() == "" || text2.Text.Trim() == "" || 
+                    text3.Text.Trim() == "" || text4.Text.Trim() == "" || 
+                    text5.Text.Trim() == "") throw new Exception();
 
                 //Создать команду для добавления
                 SqlCommand myComm = new SqlCommand("execute add_film_filmm_genre @p1, @p2, @p3, @p4, @p5", myConn);
-                //Создать параметр и передать в него значение текстового поля 
 
+                //Создать параметр и передать в него значение текстового поля 
                 myComm.Parameters.Add("@p1", SqlDbType.NVarChar, 100);
                 myComm.Parameters["@p1"].Value = text1.Text.ToString();
 

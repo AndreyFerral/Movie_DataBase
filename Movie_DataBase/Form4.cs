@@ -24,25 +24,24 @@ namespace Movie_DataBase
         {
             try
             {
-                //Создать команду для добавления
-                SqlCommand myComm = new SqlCommand("Exec [dbo].[add_prokatchik] @name = @p1", myConn);
-                //Создать параметр и передать в него значение текстового поля 
                 if (text1.Text.Trim() == "") throw new Exception();
+
+                // Создать команду для добавления
+                SqlCommand myComm = new SqlCommand("execute add_prokatchik @p1", myConn);
+
+                // Создать параметр и передать в него значение текстового поля 
                 myComm.Parameters.Add("@p1", SqlDbType.NVarChar, 100);
                 myComm.Parameters["@p1"].Value = text1.Text.ToString();
-                //вызвать процедуру без возвращения результата
+
+                // Вызвать процедуру без возвращения результата
                 myComm.ExecuteNonQuery();
             }
             catch { MessageBox.Show("Исключение: Возможно вы ввели пустую строку", "Внимание!"); }
 
         }
 
-        private void text1_TextChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void label1_Click(object sender, EventArgs e)
+        private void text1_TextChanged_1(object sender, EventArgs e)
         {
 
         }

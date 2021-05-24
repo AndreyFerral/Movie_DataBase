@@ -5,19 +5,19 @@ using System.Windows.Forms;
 
 namespace Movie_DataBase
 {
-    public partial class Form9 : Form
+    public partial class Form16 : Form
     {
         SqlConnection myConn = new SqlConnection();
         int indexSelectRow;
-        SqlCommand myComm = new SqlCommand("select idЖанр, Жанр from Жанр");
+        SqlCommand myComm = new SqlCommand("select*from Зал");
         SqlDataAdapter sda = new SqlDataAdapter(); DataSet ds = new DataSet();
 
-        public Form9()
+        public Form16()
         {
             InitializeComponent();
         }
 
-        private void Form9_Load(object sender, EventArgs e)
+        private void Form16_Load(object sender, EventArgs e)
         {
             //Получаем строку подключения из параметров
             string StrConn = Properties.Settings.Default.ConnStr.ToString();
@@ -29,11 +29,11 @@ namespace Movie_DataBase
             //Выборка создания и заполнения в DataSet таблицы с жанрами
             myComm.Connection = myConn;
             sda.SelectCommand = myComm;
-            sda.Fill(ds, "Жанр");
+            sda.Fill(ds, "Зал");
 
-            dataGridView1.Columns[0].ReadOnly = true; // блокируем изменение id
+            dataGridView1.Columns[0].ReadOnly = true;
             dataGridView1.AutoGenerateColumns = false;
-            dataGridView1.DataSource = ds.Tables["Жанр"];
+            dataGridView1.DataSource = ds.Tables["Зал"];
             dataGridView1.Refresh();
         }
 
@@ -41,11 +41,48 @@ namespace Movie_DataBase
         {
             indexSelectRow = e.RowIndex;
         }
-
-        private void Form9_FormClosing(object sender, FormClosingEventArgs e)
+        private void Form16_FormClosing(object sender, FormClosingEventArgs e)
         {
             myConn.Close();
             Application.Exit();
+        }
+
+        private void добавлениеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ds.Tables["Зал"].Rows.Add();
+        }
+
+        private void удалениеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult result = MessageBox.Show("Будет удалена вся информация о зале. Продолжить?", "Внимание!", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    int rowIndex = dataGridView1.CurrentCell.RowIndex;
+                    dataGridView1.Rows.RemoveAt(rowIndex);
+                }
+            }
+            catch { MessageBox.Show("Почему-то вызвалось исключение", "Внимание!"); }
+        }
+
+        private void сохранениеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Создаем команды манипулирования данными
+                SqlCommandBuilder scb = new SqlCommandBuilder(sda);
+                scb.GetUpdateCommand(); scb.GetDeleteCommand(); scb.GetInsertCommand();
+
+                // Отправляем изменения в БД
+                sda.Update(ds.Tables["Зал"]);
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка. Возможное решение:\n\n " +
+                "1. Необходимо заполнить добавленную строку.\n\n " +
+                "2. Количество рядов и мест должно находиться в диапазоне от 1 до 20", "Внимание!");
+            }
         }
 
         private void назадToolStripMenuItem_Click(object sender, EventArgs e)
@@ -54,36 +91,6 @@ namespace Movie_DataBase
             Form2 form2 = new Form2();
             form2.ShowDialog();
             Close();
-        }
-
-        private void удалениеToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            try {
-                DialogResult result = MessageBox.Show("Будет удалена вся информация о жанре. Продолжить?", "Внимание!", MessageBoxButtons.YesNo);
-                if (result == DialogResult.Yes)
-                {
-                    int rowIndex = dataGridView1.CurrentCell.RowIndex;
-                    dataGridView1.Rows.RemoveAt(rowIndex);
-                }
-            }
-            catch { MessageBox.Show("Почему-то вызвалось исключение. Выполните двойной щелчок по названию жанра", "Внимание!"); }
-        }
-
-        private void добавлениеToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ds.Tables["Жанр"].Rows.Add();
-        }
-
-        private void сохранениеToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            try {  
-                // Создаем команды манипулирования данными
-                SqlCommandBuilder scb = new SqlCommandBuilder(sda);
-                scb.GetUpdateCommand(); scb.GetDeleteCommand(); scb.GetInsertCommand();
-                // Отправляем изменения в БД
-                sda.Update(ds.Tables["Жанр"]);
-            }
-            catch { MessageBox.Show("Необходимо заполнить добавленную строку", "Внимание!"); }
         }
     }
 }

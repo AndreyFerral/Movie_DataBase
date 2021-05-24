@@ -1,7 +1,7 @@
 ﻿
 namespace Movie_DataBase
 {
-    partial class Form3
+    partial class Form17
     {
         /// <summary>
         /// Required designer variable.
@@ -29,30 +29,19 @@ namespace Movie_DataBase
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.добавлениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.изменениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.информацияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сохранениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.назадToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.timing = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mesto1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ryad1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idProkat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameProkat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.добавлениеToolStripMenuItem,
-            this.изменениеToolStripMenuItem,
-            this.удалениеToolStripMenuItem,
-            this.назадToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(419, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
             // 
             // добавлениеToolStripMenuItem
             // 
@@ -61,19 +50,26 @@ namespace Movie_DataBase
             this.добавлениеToolStripMenuItem.Text = "Добавление";
             this.добавлениеToolStripMenuItem.Click += new System.EventHandler(this.добавлениеToolStripMenuItem_Click);
             // 
-            // изменениеToolStripMenuItem
-            // 
-            this.изменениеToolStripMenuItem.Name = "изменениеToolStripMenuItem";
-            this.изменениеToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
-            this.изменениеToolStripMenuItem.Text = "Изменение";
-            this.изменениеToolStripMenuItem.Click += new System.EventHandler(this.изменениеToolStripMenuItem_Click);
-            // 
             // удалениеToolStripMenuItem
             // 
             this.удалениеToolStripMenuItem.Name = "удалениеToolStripMenuItem";
             this.удалениеToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.удалениеToolStripMenuItem.Text = "Удаление";
             this.удалениеToolStripMenuItem.Click += new System.EventHandler(this.удалениеToolStripMenuItem_Click);
+            // 
+            // информацияToolStripMenuItem
+            // 
+            this.информацияToolStripMenuItem.Name = "информацияToolStripMenuItem";
+            this.информацияToolStripMenuItem.Size = new System.Drawing.Size(93, 20);
+            this.информацияToolStripMenuItem.Text = "Информация";
+            this.информацияToolStripMenuItem.Click += new System.EventHandler(this.информацияToolStripMenuItem_Click);
+            // 
+            // сохранениеToolStripMenuItem
+            // 
+            this.сохранениеToolStripMenuItem.Name = "сохранениеToolStripMenuItem";
+            this.сохранениеToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
+            this.сохранениеToolStripMenuItem.Text = "Сохранение";
+            this.сохранениеToolStripMenuItem.Click += new System.EventHandler(this.сохранениеToolStripMenuItem_Click);
             // 
             // назадToolStripMenuItem
             // 
@@ -82,52 +78,64 @@ namespace Movie_DataBase
             this.назадToolStripMenuItem.Text = "Назад";
             this.назадToolStripMenuItem.Click += new System.EventHandler(this.назадToolStripMenuItem_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.добавлениеToolStripMenuItem,
+            this.удалениеToolStripMenuItem,
+            this.информацияToolStripMenuItem,
+            this.сохранениеToolStripMenuItem,
+            this.назадToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(399, 24);
+            this.menuStrip1.TabIndex = 13;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // timing
+            // 
+            this.timing.DataPropertyName = "Расписание_idРасписание";
+            this.timing.HeaderText = "Номер расписания";
+            this.timing.Name = "timing";
+            // 
+            // mesto1
+            // 
+            this.mesto1.DataPropertyName = "Место";
+            this.mesto1.HeaderText = "Место";
+            this.mesto1.Name = "mesto1";
+            // 
+            // ryad1
+            // 
+            this.ryad1.DataPropertyName = "Ряд";
+            this.ryad1.HeaderText = "Ряд";
+            this.ryad1.Name = "ryad1";
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idProkat,
-            this.nameProkat});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 27);
+            this.ryad1,
+            this.mesto1,
+            this.timing});
+            this.dataGridView1.Location = new System.Drawing.Point(12, 35);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(395, 309);
-            this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.Size = new System.Drawing.Size(375, 338);
+            this.dataGridView1.TabIndex = 14;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // idProkat
-            // 
-            this.idProkat.DataPropertyName = "idПрокатчик";
-            this.idProkat.HeaderText = "Номер прокатчика";
-            this.idProkat.Name = "idProkat";
-            this.idProkat.ReadOnly = true;
-            // 
-            // nameProkat
-            // 
-            this.nameProkat.DataPropertyName = "Название";
-            this.nameProkat.HeaderText = "Наименование прокатчика";
-            this.nameProkat.Name = "nameProkat";
-            this.nameProkat.ReadOnly = true;
-            this.nameProkat.Width = 250;
-            // 
-            // Form3
+            // Form17
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(419, 348);
+            this.ClientSize = new System.Drawing.Size(399, 382);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "Form3";
-            this.Text = "Список прокатчиков";
-            this.Load += new System.EventHandler(this.Form3_Load);
+            this.Name = "Form17";
+            this.Text = "Список билетов";
+            this.Load += new System.EventHandler(this.Form17_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -138,13 +146,15 @@ namespace Movie_DataBase
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem добавлениеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem удалениеToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem изменениеToolStripMenuItem;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ToolStripMenuItem информацияToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem сохранениеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem назадToolStripMenuItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idProkat;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameProkat;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn timing;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mesto1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ryad1;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

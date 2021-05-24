@@ -139,6 +139,7 @@ namespace Movie_DataBase
             // 
             this.txtPass.Location = new System.Drawing.Point(250, 181);
             this.txtPass.Name = "txtPass";
+            this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(295, 26);
             this.txtPass.TabIndex = 9;
             // 

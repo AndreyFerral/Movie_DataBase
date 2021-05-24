@@ -1,6 +1,7 @@
-﻿namespace Movie_DataBase
+﻿
+namespace Movie_DataBase
 {
-    partial class Form5
+    partial class Form21
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +31,17 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.добавлениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.информацияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.информацияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сохранениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.назадToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idФильм = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Название = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Описание = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_timing = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_prokat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_hall = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Длительность = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datetime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -46,41 +50,48 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.добавлениеToolStripMenuItem,
-            this.информацияToolStripMenuItem,
             this.удалениеToolStripMenuItem,
+            this.информацияToolStripMenuItem,
+            this.сохранениеToolStripMenuItem,
             this.назадToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(844, 25);
-            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Size = new System.Drawing.Size(729, 24);
+            this.menuStrip1.TabIndex = 17;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // добавлениеToolStripMenuItem
             // 
             this.добавлениеToolStripMenuItem.Name = "добавлениеToolStripMenuItem";
-            this.добавлениеToolStripMenuItem.Size = new System.Drawing.Size(133, 19);
-            this.добавлениеToolStripMenuItem.Text = "Добавление фильма";
+            this.добавлениеToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
+            this.добавлениеToolStripMenuItem.Text = "Добавление";
             this.добавлениеToolStripMenuItem.Click += new System.EventHandler(this.добавлениеToolStripMenuItem_Click);
-            // 
-            // информацияToolStripMenuItem
-            // 
-            this.информацияToolStripMenuItem.Name = "информацияToolStripMenuItem";
-            this.информацияToolStripMenuItem.Size = new System.Drawing.Size(166, 19);
-            this.информацияToolStripMenuItem.Text = "Информация / Изменение";
-            this.информацияToolStripMenuItem.Click += new System.EventHandler(this.информацияToolStripMenuItem_Click);
             // 
             // удалениеToolStripMenuItem
             // 
             this.удалениеToolStripMenuItem.Name = "удалениеToolStripMenuItem";
-            this.удалениеToolStripMenuItem.Size = new System.Drawing.Size(71, 19);
+            this.удалениеToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.удалениеToolStripMenuItem.Text = "Удаление";
             this.удалениеToolStripMenuItem.Click += new System.EventHandler(this.удалениеToolStripMenuItem_Click);
+            // 
+            // информацияToolStripMenuItem
+            // 
+            this.информацияToolStripMenuItem.Name = "информацияToolStripMenuItem";
+            this.информацияToolStripMenuItem.Size = new System.Drawing.Size(93, 20);
+            this.информацияToolStripMenuItem.Text = "Информация";
+            this.информацияToolStripMenuItem.Click += new System.EventHandler(this.информацияToolStripMenuItem_Click);
+            // 
+            // сохранениеToolStripMenuItem
+            // 
+            this.сохранениеToolStripMenuItem.Name = "сохранениеToolStripMenuItem";
+            this.сохранениеToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
+            this.сохранениеToolStripMenuItem.Text = "Сохранение";
+            this.сохранениеToolStripMenuItem.Click += new System.EventHandler(this.сохранениеToolStripMenuItem_Click);
             // 
             // назадToolStripMenuItem
             // 
             this.назадToolStripMenuItem.Name = "назадToolStripMenuItem";
-            this.назадToolStripMenuItem.Size = new System.Drawing.Size(51, 19);
+            this.назадToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.назадToolStripMenuItem.Text = "Назад";
             this.назадToolStripMenuItem.Click += new System.EventHandler(this.назадToolStripMenuItem_Click);
             // 
@@ -93,62 +104,68 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idФильм,
-            this.Название,
-            this.Описание,
-            this.Длительность});
-            this.dataGridView1.Location = new System.Drawing.Point(13, 30);
+            this.id_timing,
+            this.id_prokat,
+            this.id_hall,
+            this.Длительность,
+            this.datetime,
+            this.cost});
+            this.dataGridView1.Location = new System.Drawing.Point(13, 29);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(818, 378);
-            this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.Size = new System.Drawing.Size(703, 386);
+            this.dataGridView1.TabIndex = 23;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // idФильм
+            // id_timing
             // 
-            this.idФильм.DataPropertyName = "idФильм";
-            this.idФильм.HeaderText = "Номер фильма";
-            this.idФильм.Name = "idФильм";
-            this.idФильм.ReadOnly = true;
-            this.idФильм.Width = 80;
+            this.id_timing.DataPropertyName = "idРасписание";
+            this.id_timing.HeaderText = "Номер расписания";
+            this.id_timing.Name = "id_timing";
             // 
-            // Название
+            // id_prokat
             // 
-            this.Название.DataPropertyName = "Название";
-            this.Название.HeaderText = "Название фильма";
-            this.Название.Name = "Название";
-            this.Название.ReadOnly = true;
-            this.Название.Width = 250;
+            this.id_prokat.DataPropertyName = "Прокат_фильма_Номер_договора";
+            this.id_prokat.HeaderText = "Номер проката";
+            this.id_prokat.Name = "id_prokat";
             // 
-            // Описание
+            // id_hall
             // 
-            this.Описание.DataPropertyName = "Описание";
-            this.Описание.HeaderText = "Описание";
-            this.Описание.Name = "Описание";
-            this.Описание.ReadOnly = true;
-            this.Описание.Width = 300;
+            this.id_hall.DataPropertyName = "Зал_idЗал";
+            this.id_hall.HeaderText = "Номер зала";
+            this.id_hall.Name = "id_hall";
             // 
             // Длительность
             // 
-            this.Длительность.DataPropertyName = "Длительность";
-            this.Длительность.HeaderText = "Длительность";
+            this.Длительность.DataPropertyName = "Сотрудник_idСотрудник";
+            this.Длительность.HeaderText = "Номер сотрудника";
             this.Длительность.Name = "Длительность";
-            this.Длительность.ReadOnly = true;
-            this.Длительность.Width = 130;
             // 
-            // Form5
+            // datetime
+            // 
+            this.datetime.DataPropertyName = "Дата_время";
+            this.datetime.HeaderText = "Дата и время";
+            this.datetime.Name = "datetime";
+            this.datetime.Width = 150;
+            // 
+            // cost
+            // 
+            this.cost.DataPropertyName = "Стоимость";
+            this.cost.HeaderText = "Стоимость";
+            this.cost.Name = "cost";
+            // 
+            // Form21
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(844, 422);
+            this.ClientSize = new System.Drawing.Size(729, 429);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "Form5";
-            this.Text = "Список фильмов";
-            this.Load += new System.EventHandler(this.Form5_Load);
+            this.Name = "Form21";
+            this.Text = "Список расписаний";
+            this.Load += new System.EventHandler(this.Form21_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -158,16 +175,18 @@
         }
 
         #endregion
-
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem добавлениеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem удалениеToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem информацияToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem сохранениеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem назадToolStripMenuItem;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idФильм;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Название;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Описание;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_timing;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_prokat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_hall;
         private System.Windows.Forms.DataGridViewTextBoxColumn Длительность;
-        private System.Windows.Forms.ToolStripMenuItem информацияToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn datetime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cost;
     }
 }
