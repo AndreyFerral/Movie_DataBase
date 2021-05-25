@@ -101,6 +101,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(844, 397);
             this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // idФильм
@@ -118,7 +119,7 @@
             this.Название.HeaderText = "Название фильма";
             this.Название.Name = "Название";
             this.Название.ReadOnly = true;
-            this.Название.Width = 175;
+            this.Название.Width = 159;
             // 
             // Описание
             // 

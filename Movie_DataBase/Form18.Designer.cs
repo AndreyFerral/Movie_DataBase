@@ -30,18 +30,18 @@ namespace Movie_DataBase
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.id_timing = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_prokat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_hall = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Длительность = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.datetime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.id_timing = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_prokat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_hall = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Длительность = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datetime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,49 +64,6 @@ namespace Movie_DataBase
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(697, 207);
             this.dataGridView1.TabIndex = 22;
-            // 
-            // id_timing
-            // 
-            this.id_timing.DataPropertyName = "idРасписание";
-            this.id_timing.HeaderText = "Номер расписания";
-            this.id_timing.Name = "id_timing";
-            this.id_timing.ReadOnly = true;
-            // 
-            // id_prokat
-            // 
-            this.id_prokat.DataPropertyName = "Прокат_фильма_Номер_договора";
-            this.id_prokat.HeaderText = "Номер проката";
-            this.id_prokat.Name = "id_prokat";
-            this.id_prokat.ReadOnly = true;
-            // 
-            // id_hall
-            // 
-            this.id_hall.DataPropertyName = "Зал_idЗал";
-            this.id_hall.HeaderText = "Номер зала";
-            this.id_hall.Name = "id_hall";
-            this.id_hall.ReadOnly = true;
-            // 
-            // Длительность
-            // 
-            this.Длительность.DataPropertyName = "Сотрудник_idСотрудник";
-            this.Длительность.HeaderText = "Номер сотрудника";
-            this.Длительность.Name = "Длительность";
-            this.Длительность.ReadOnly = true;
-            // 
-            // datetime
-            // 
-            this.datetime.DataPropertyName = "Дата_время";
-            this.datetime.HeaderText = "Дата и время";
-            this.datetime.Name = "datetime";
-            this.datetime.ReadOnly = true;
-            this.datetime.Width = 150;
-            // 
-            // cost
-            // 
-            this.cost.DataPropertyName = "Стоимость";
-            this.cost.HeaderText = "Стоимость";
-            this.cost.Name = "cost";
-            this.cost.ReadOnly = true;
             // 
             // textBox3
             // 
@@ -167,6 +124,49 @@ namespace Movie_DataBase
             this.label3.Size = new System.Drawing.Size(151, 20);
             this.label3.TabIndex = 25;
             this.label3.Text = "Номер расписания";
+            // 
+            // id_timing
+            // 
+            this.id_timing.DataPropertyName = "idРасписание";
+            this.id_timing.HeaderText = "Номер расписания";
+            this.id_timing.Name = "id_timing";
+            this.id_timing.ReadOnly = true;
+            // 
+            // id_prokat
+            // 
+            this.id_prokat.DataPropertyName = "Прокат_фильма_Номер_договора";
+            this.id_prokat.HeaderText = "Номер проката";
+            this.id_prokat.Name = "id_prokat";
+            this.id_prokat.ReadOnly = true;
+            // 
+            // id_hall
+            // 
+            this.id_hall.DataPropertyName = "Название";
+            this.id_hall.HeaderText = "Зал";
+            this.id_hall.Name = "id_hall";
+            this.id_hall.ReadOnly = true;
+            // 
+            // Длительность
+            // 
+            this.Длительность.DataPropertyName = "ФИО";
+            this.Длительность.HeaderText = "Сотрудник";
+            this.Длительность.Name = "Длительность";
+            this.Длительность.ReadOnly = true;
+            // 
+            // datetime
+            // 
+            this.datetime.DataPropertyName = "Дата_время";
+            this.datetime.HeaderText = "Дата и время";
+            this.datetime.Name = "datetime";
+            this.datetime.ReadOnly = true;
+            this.datetime.Width = 150;
+            // 
+            // cost
+            // 
+            this.cost.DataPropertyName = "Стоимость";
+            this.cost.HeaderText = "Стоимость";
+            this.cost.Name = "cost";
+            this.cost.ReadOnly = true;
             // 
             // Form18
             // 

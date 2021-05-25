@@ -30,14 +30,14 @@ namespace Movie_DataBase
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.number_Film = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name_FilmMaker = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.добавлениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.информацияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сохранениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.назадToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.number_Film = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name_FilmMaker = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -54,7 +54,22 @@ namespace Movie_DataBase
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(434, 387);
             this.dataGridView1.TabIndex = 6;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // number_Film
+            // 
+            this.number_Film.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.number_Film.DataPropertyName = "Фильм_idФильм";
+            this.number_Film.HeaderText = "Номер фильма";
+            this.number_Film.Name = "number_Film";
+            // 
+            // name_FilmMaker
+            // 
+            this.name_FilmMaker.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.name_FilmMaker.DataPropertyName = "Режиссер";
+            this.name_FilmMaker.HeaderText = "ФИО Режиссер";
+            this.name_FilmMaker.Name = "name_FilmMaker";
             // 
             // menuStrip1
             // 
@@ -104,20 +119,6 @@ namespace Movie_DataBase
             this.назадToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.назадToolStripMenuItem.Text = "Назад";
             this.назадToolStripMenuItem.Click += new System.EventHandler(this.назадToolStripMenuItem_Click);
-            // 
-            // number_Film
-            // 
-            this.number_Film.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.number_Film.DataPropertyName = "Фильм_idФильм";
-            this.number_Film.HeaderText = "Номер фильма";
-            this.number_Film.Name = "number_Film";
-            // 
-            // name_FilmMaker
-            // 
-            this.name_FilmMaker.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.name_FilmMaker.DataPropertyName = "Режиссер";
-            this.name_FilmMaker.HeaderText = "ФИО Режиссер";
-            this.name_FilmMaker.Name = "name_FilmMaker";
             // 
             // Form10
             // 

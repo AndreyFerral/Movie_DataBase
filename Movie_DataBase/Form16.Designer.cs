@@ -30,15 +30,15 @@ namespace Movie_DataBase
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.number_Hall = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name_hall = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ryad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.добавлениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сохранениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.назадToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.number_Hall = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name_hall = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ryad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -57,7 +57,39 @@ namespace Movie_DataBase
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(534, 387);
             this.dataGridView1.TabIndex = 12;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // number_Hall
+            // 
+            this.number_Hall.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.number_Hall.DataPropertyName = "idЗал";
+            this.number_Hall.HeaderText = "Номер зала";
+            this.number_Hall.Name = "number_Hall";
+            this.number_Hall.Width = 124;
+            // 
+            // name_hall
+            // 
+            this.name_hall.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.name_hall.DataPropertyName = "Название";
+            this.name_hall.HeaderText = "Название";
+            this.name_hall.Name = "name_hall";
+            // 
+            // ryad
+            // 
+            this.ryad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ryad.DataPropertyName = "Количество_рядов";
+            this.ryad.HeaderText = "Кол-во рядов";
+            this.ryad.Name = "ryad";
+            this.ryad.Width = 137;
+            // 
+            // mesto
+            // 
+            this.mesto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.mesto.DataPropertyName = "Количество_мест";
+            this.mesto.HeaderText = "Кол-во мест";
+            this.mesto.Name = "mesto";
+            this.mesto.Width = 127;
             // 
             // menuStrip1
             // 
@@ -99,37 +131,6 @@ namespace Movie_DataBase
             this.назадToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.назадToolStripMenuItem.Text = "Назад";
             this.назадToolStripMenuItem.Click += new System.EventHandler(this.назадToolStripMenuItem_Click);
-            // 
-            // number_Hall
-            // 
-            this.number_Hall.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.number_Hall.DataPropertyName = "idЗал";
-            this.number_Hall.HeaderText = "Номер зала";
-            this.number_Hall.Name = "number_Hall";
-            this.number_Hall.Width = 124;
-            // 
-            // name_hall
-            // 
-            this.name_hall.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.name_hall.DataPropertyName = "Название";
-            this.name_hall.HeaderText = "Название";
-            this.name_hall.Name = "name_hall";
-            // 
-            // ryad
-            // 
-            this.ryad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ryad.DataPropertyName = "Количество_рядов";
-            this.ryad.HeaderText = "Кол-во рядов";
-            this.ryad.Name = "ryad";
-            this.ryad.Width = 137;
-            // 
-            // mesto
-            // 
-            this.mesto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.mesto.DataPropertyName = "Количество_мест";
-            this.mesto.HeaderText = "Кол-во мест";
-            this.mesto.Name = "mesto";
-            this.mesto.Width = 127;
             // 
             // Form16
             // 

@@ -46,8 +46,16 @@ namespace Movie_DataBase
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.number_Hall = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name_hall = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ryad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.number_Staff = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name_staff = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.s_post = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.n_dogovor1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.n_staff1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.n_film1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,14 +64,6 @@ namespace Movie_DataBase
             this.date2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.week1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cost1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.number_Hall = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name_hall = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ryad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.number_Staff = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name_staff = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.s_post = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -207,6 +207,7 @@ namespace Movie_DataBase
             // 
             // tabPage2
             // 
+            this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
             this.tabPage2.Controls.Add(this.dataGridView1);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
@@ -214,7 +215,6 @@ namespace Movie_DataBase
             this.tabPage2.Size = new System.Drawing.Size(900, 146);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Договор";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -238,13 +238,13 @@ namespace Movie_DataBase
             // 
             // tabPage3
             // 
+            this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
             this.tabPage3.Controls.Add(this.dataGridView3);
             this.tabPage3.Location = new System.Drawing.Point(4, 29);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(900, 146);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Зал";
-            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // dataGridView3
             // 
@@ -260,95 +260,6 @@ namespace Movie_DataBase
             this.dataGridView3.ReadOnly = true;
             this.dataGridView3.Size = new System.Drawing.Size(620, 140);
             this.dataGridView3.TabIndex = 53;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.dataGridView2);
-            this.tabPage4.Location = new System.Drawing.Point(4, 29);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(900, 146);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Сотрудник";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.number_Staff,
-            this.name_staff,
-            this.s_post,
-            this.number});
-            this.dataGridView2.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(620, 140);
-            this.dataGridView2.TabIndex = 11;
-            // 
-            // n_dogovor1
-            // 
-            this.n_dogovor1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.n_dogovor1.DataPropertyName = "Номер_договора";
-            this.n_dogovor1.HeaderText = "Номер договора";
-            this.n_dogovor1.Name = "n_dogovor1";
-            this.n_dogovor1.ReadOnly = true;
-            // 
-            // n_staff1
-            // 
-            this.n_staff1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.n_staff1.DataPropertyName = "Сотрудник_idСотрудник";
-            this.n_staff1.HeaderText = "Номер сотрудника";
-            this.n_staff1.Name = "n_staff1";
-            this.n_staff1.ReadOnly = true;
-            // 
-            // n_film1
-            // 
-            this.n_film1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.n_film1.DataPropertyName = "Фильм_idФильм";
-            this.n_film1.HeaderText = "Номер фильма";
-            this.n_film1.Name = "n_film1";
-            this.n_film1.ReadOnly = true;
-            // 
-            // n_prokatchik1
-            // 
-            this.n_prokatchik1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.n_prokatchik1.DataPropertyName = "Прокатчик_idПрокатчик";
-            this.n_prokatchik1.HeaderText = "Номер прокатчика";
-            this.n_prokatchik1.Name = "n_prokatchik1";
-            this.n_prokatchik1.ReadOnly = true;
-            // 
-            // date1
-            // 
-            this.date1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.date1.DataPropertyName = "Дата_Договора";
-            this.date1.HeaderText = "Дата договора";
-            this.date1.Name = "date1";
-            this.date1.ReadOnly = true;
-            // 
-            // date2
-            // 
-            this.date2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.date2.DataPropertyName = "Дата_проката";
-            this.date2.HeaderText = "Дата проката";
-            this.date2.Name = "date2";
-            this.date2.ReadOnly = true;
-            // 
-            // week1
-            // 
-            this.week1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.week1.DataPropertyName = "Количество_недель";
-            this.week1.HeaderText = "Количество недель";
-            this.week1.Name = "week1";
-            this.week1.ReadOnly = true;
-            // 
-            // cost1
-            // 
-            this.cost1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cost1.DataPropertyName = "Стоимость";
-            this.cost1.HeaderText = "Стоимость";
-            this.cost1.Name = "cost1";
-            this.cost1.ReadOnly = true;
             // 
             // number_Hall
             // 
@@ -385,6 +296,31 @@ namespace Movie_DataBase
             this.mesto.ReadOnly = true;
             this.mesto.Width = 127;
             // 
+            // tabPage4
+            // 
+            this.tabPage4.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage4.Controls.Add(this.dataGridView2);
+            this.tabPage4.Location = new System.Drawing.Point(4, 29);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(900, 146);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Сотрудник";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.number_Staff,
+            this.name_staff,
+            this.s_post,
+            this.number});
+            this.dataGridView2.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.Size = new System.Drawing.Size(620, 140);
+            this.dataGridView2.TabIndex = 11;
+            // 
             // number_Staff
             // 
             this.number_Staff.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -418,6 +354,70 @@ namespace Movie_DataBase
             this.number.Name = "number";
             this.number.ReadOnly = true;
             this.number.Width = 104;
+            // 
+            // n_dogovor1
+            // 
+            this.n_dogovor1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.n_dogovor1.DataPropertyName = "Номер_договора";
+            this.n_dogovor1.HeaderText = "Номер договора";
+            this.n_dogovor1.Name = "n_dogovor1";
+            this.n_dogovor1.ReadOnly = true;
+            // 
+            // n_staff1
+            // 
+            this.n_staff1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.n_staff1.DataPropertyName = "ФИО";
+            this.n_staff1.HeaderText = "Сотрудник";
+            this.n_staff1.Name = "n_staff1";
+            this.n_staff1.ReadOnly = true;
+            // 
+            // n_film1
+            // 
+            this.n_film1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.n_film1.DataPropertyName = "Фильм";
+            this.n_film1.HeaderText = "Фильм";
+            this.n_film1.Name = "n_film1";
+            this.n_film1.ReadOnly = true;
+            // 
+            // n_prokatchik1
+            // 
+            this.n_prokatchik1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.n_prokatchik1.DataPropertyName = "Прокатчик";
+            this.n_prokatchik1.HeaderText = "Прокатчик";
+            this.n_prokatchik1.Name = "n_prokatchik1";
+            this.n_prokatchik1.ReadOnly = true;
+            // 
+            // date1
+            // 
+            this.date1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.date1.DataPropertyName = "Дата_Договора";
+            this.date1.HeaderText = "Дата договора";
+            this.date1.Name = "date1";
+            this.date1.ReadOnly = true;
+            // 
+            // date2
+            // 
+            this.date2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.date2.DataPropertyName = "Дата_проката";
+            this.date2.HeaderText = "Дата проката";
+            this.date2.Name = "date2";
+            this.date2.ReadOnly = true;
+            // 
+            // week1
+            // 
+            this.week1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.week1.DataPropertyName = "Количество_недель";
+            this.week1.HeaderText = "Количество недель";
+            this.week1.Name = "week1";
+            this.week1.ReadOnly = true;
+            // 
+            // cost1
+            // 
+            this.cost1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cost1.DataPropertyName = "Стоимость";
+            this.cost1.HeaderText = "Стоимость";
+            this.cost1.Name = "cost1";
+            this.cost1.ReadOnly = true;
             // 
             // Form22
             // 
@@ -476,14 +476,6 @@ namespace Movie_DataBase
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn n_dogovor1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn n_staff1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn n_film1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn n_prokatchik1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn date1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn date2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn week1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cost1;
         private System.Windows.Forms.DataGridViewTextBoxColumn number_Hall;
         private System.Windows.Forms.DataGridViewTextBoxColumn name_hall;
         private System.Windows.Forms.DataGridViewTextBoxColumn ryad;
@@ -492,5 +484,13 @@ namespace Movie_DataBase
         private System.Windows.Forms.DataGridViewTextBoxColumn name_staff;
         private System.Windows.Forms.DataGridViewTextBoxColumn s_post;
         private System.Windows.Forms.DataGridViewTextBoxColumn number;
+        private System.Windows.Forms.DataGridViewTextBoxColumn n_dogovor1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn n_staff1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn n_film1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn n_prokatchik1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn date1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn date2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn week1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cost1;
     }
 }

@@ -42,7 +42,7 @@ namespace Movie_DataBase
         private void loadData()
         {
             // Создать команду для выборки
-            SqlCommand myComm = new SqlCommand("select*from dbo.Фильм join dbo.Режиссер ON Фильм.idФильм = Режиссер.Фильм_idФильм WHERE Режиссер = @p1", myConn);
+            SqlCommand myComm = new SqlCommand("select*from dbo.View_FilmMaker WHERE Режиссер = @p1", myConn);
 
             // Создать параметр и передать в него значение текстового поля 
             myComm.Parameters.Add("@p1", SqlDbType.NVarChar, 100);

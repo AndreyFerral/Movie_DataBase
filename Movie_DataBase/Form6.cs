@@ -90,7 +90,7 @@ namespace Movie_DataBase
         private void loadData2()
         {
             // Создать команду для выборки
-            SqlCommand myComm = new SqlCommand("select Жанр, idЖанр from dbo.Жанр join dbo.Фильм_has_Жанр ON Жанр.idЖанр = Фильм_has_Жанр.Жанр_idЖанр where Фильм_idФильм = @p1", myConn);
+            SqlCommand myComm = new SqlCommand("select Жанр, Жанр_idЖанр from dbo.View_FilmGenre where Фильм_idФильм = @p1", myConn);
 
             // Создать параметр и передать в него значение текстового поля 
             myComm.Parameters.Add("@p1", SqlDbType.NVarChar, 10);

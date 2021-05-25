@@ -46,7 +46,7 @@ namespace Movie_DataBase
             // 
             this.lblNameSrv.AutoSize = true;
             this.lblNameSrv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblNameSrv.Location = new System.Drawing.Point(32, 31);
+            this.lblNameSrv.Location = new System.Drawing.Point(32, 29);
             this.lblNameSrv.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNameSrv.Name = "lblNameSrv";
             this.lblNameSrv.Size = new System.Drawing.Size(106, 20);
@@ -57,7 +57,7 @@ namespace Movie_DataBase
             // 
             this.lblNameDB.AutoSize = true;
             this.lblNameDB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblNameDB.Location = new System.Drawing.Point(32, 70);
+            this.lblNameDB.Location = new System.Drawing.Point(32, 68);
             this.lblNameDB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNameDB.Name = "lblNameDB";
             this.lblNameDB.Size = new System.Drawing.Size(141, 20);
@@ -68,7 +68,7 @@ namespace Movie_DataBase
             // 
             this.lblTypeAutor.AutoSize = true;
             this.lblTypeAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblTypeAutor.Location = new System.Drawing.Point(32, 109);
+            this.lblTypeAutor.Location = new System.Drawing.Point(32, 107);
             this.lblTypeAutor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTypeAutor.Name = "lblTypeAutor";
             this.lblTypeAutor.Size = new System.Drawing.Size(188, 20);
@@ -79,7 +79,7 @@ namespace Movie_DataBase
             // 
             this.lblUserName.AutoSize = true;
             this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblUserName.Location = new System.Drawing.Point(32, 148);
+            this.lblUserName.Location = new System.Drawing.Point(32, 146);
             this.lblUserName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUserName.Name = "lblUserName";
             this.lblUserName.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -92,7 +92,7 @@ namespace Movie_DataBase
             // 
             this.lblPass.AutoSize = true;
             this.lblPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblPass.Location = new System.Drawing.Point(32, 187);
+            this.lblPass.Location = new System.Drawing.Point(32, 185);
             this.lblPass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPass.Name = "lblPass";
             this.lblPass.Size = new System.Drawing.Size(67, 20);
@@ -103,7 +103,7 @@ namespace Movie_DataBase
             // cmbTypeAutor
             // 
             this.cmbTypeAutor.FormattingEnabled = true;
-            this.cmbTypeAutor.Location = new System.Drawing.Point(250, 101);
+            this.cmbTypeAutor.Location = new System.Drawing.Point(250, 99);
             this.cmbTypeAutor.Name = "cmbTypeAutor";
             this.cmbTypeAutor.Size = new System.Drawing.Size(295, 28);
             this.cmbTypeAutor.TabIndex = 5;
@@ -114,7 +114,7 @@ namespace Movie_DataBase
             // 
             // txtNameSrv
             // 
-            this.txtNameSrv.Location = new System.Drawing.Point(250, 25);
+            this.txtNameSrv.Location = new System.Drawing.Point(250, 23);
             this.txtNameSrv.Name = "txtNameSrv";
             this.txtNameSrv.Size = new System.Drawing.Size(295, 26);
             this.txtNameSrv.TabIndex = 6;
@@ -122,7 +122,7 @@ namespace Movie_DataBase
             // 
             // txtNameDB
             // 
-            this.txtNameDB.Location = new System.Drawing.Point(250, 64);
+            this.txtNameDB.Location = new System.Drawing.Point(250, 62);
             this.txtNameDB.Name = "txtNameDB";
             this.txtNameDB.Size = new System.Drawing.Size(295, 26);
             this.txtNameDB.TabIndex = 7;
@@ -130,14 +130,14 @@ namespace Movie_DataBase
             // 
             // txtUserName
             // 
-            this.txtUserName.Location = new System.Drawing.Point(250, 142);
+            this.txtUserName.Location = new System.Drawing.Point(250, 140);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(295, 26);
             this.txtUserName.TabIndex = 8;
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(250, 181);
+            this.txtPass.Location = new System.Drawing.Point(250, 179);
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(295, 26);
@@ -145,7 +145,7 @@ namespace Movie_DataBase
             // 
             // bttConnect
             // 
-            this.bttConnect.Location = new System.Drawing.Point(431, 222);
+            this.bttConnect.Location = new System.Drawing.Point(431, 211);
             this.bttConnect.Name = "bttConnect";
             this.bttConnect.Size = new System.Drawing.Size(114, 38);
             this.bttConnect.TabIndex = 10;
@@ -157,7 +157,7 @@ namespace Movie_DataBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 278);
+            this.ClientSize = new System.Drawing.Size(584, 261);
             this.Controls.Add(this.bttConnect);
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.txtUserName);

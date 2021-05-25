@@ -41,9 +41,9 @@ namespace Movie_DataBase
             this.Длительность = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.idGenre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idNameGenre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage1.SuspendLayout();
@@ -53,7 +53,7 @@ namespace Movie_DataBase
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(176, 66);
+            this.textBox2.Location = new System.Drawing.Point(184, 25);
             this.textBox2.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
@@ -64,7 +64,7 @@ namespace Movie_DataBase
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label2.Location = new System.Drawing.Point(28, 72);
+            this.label2.Location = new System.Drawing.Point(49, 31);
             this.label2.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 20);
@@ -73,7 +73,7 @@ namespace Movie_DataBase
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(176, 27);
+            this.textBox1.Location = new System.Drawing.Point(184, 64);
             this.textBox1.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
@@ -84,7 +84,7 @@ namespace Movie_DataBase
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label1.Location = new System.Drawing.Point(28, 33);
+            this.label1.Location = new System.Drawing.Point(49, 70);
             this.label1.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 20);
@@ -93,6 +93,7 @@ namespace Movie_DataBase
             // 
             // tabPage2
             // 
+            this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
             this.tabPage2.Controls.Add(this.dataGridView1);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
@@ -100,7 +101,6 @@ namespace Movie_DataBase
             this.tabPage2.Size = new System.Drawing.Size(823, 263);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Фильм";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -154,6 +154,7 @@ namespace Movie_DataBase
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
             this.tabPage1.Controls.Add(this.dataGridView2);
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
@@ -161,7 +162,6 @@ namespace Movie_DataBase
             this.tabPage1.Size = new System.Drawing.Size(823, 263);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Жанр";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // dataGridView2
             // 
@@ -176,17 +176,6 @@ namespace Movie_DataBase
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.Size = new System.Drawing.Size(379, 257);
             this.dataGridView2.TabIndex = 25;
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tabControl1.Location = new System.Drawing.Point(0, 110);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(831, 296);
-            this.tabControl1.TabIndex = 23;
             // 
             // idGenre
             // 
@@ -203,6 +192,17 @@ namespace Movie_DataBase
             this.idNameGenre.HeaderText = "Название жанра";
             this.idNameGenre.Name = "idNameGenre";
             this.idNameGenre.ReadOnly = true;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tabControl1.Location = new System.Drawing.Point(0, 110);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(831, 296);
+            this.tabControl1.TabIndex = 23;
             // 
             // Form14
             // 

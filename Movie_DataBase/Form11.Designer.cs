@@ -52,7 +52,7 @@ namespace Movie_DataBase
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label2.Location = new System.Drawing.Point(38, 28);
+            this.label2.Location = new System.Drawing.Point(48, 28);
             this.label2.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(124, 20);
@@ -92,7 +92,7 @@ namespace Movie_DataBase
             this.Название.HeaderText = "Название фильма";
             this.Название.Name = "Название";
             this.Название.ReadOnly = true;
-            this.Название.Width = 175;
+            this.Название.Width = 159;
             // 
             // Описание
             // 

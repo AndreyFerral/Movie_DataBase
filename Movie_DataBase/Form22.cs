@@ -46,7 +46,7 @@ namespace Movie_DataBase
         }
         private void loadData1()
         {
-            SqlCommand myComm = new SqlCommand("select*from dbo.Прокат_фильма WHERE Номер_Договора = @p1", myConn);
+            SqlCommand myComm = new SqlCommand("select*from dbo.View_Dogovor WHERE Номер_Договора = @p1", myConn);
 
             // Создать параметр и передать в него значение текстового поля 
             myComm.Parameters.Add("@p1", SqlDbType.NVarChar, 100);

@@ -9,7 +9,7 @@ namespace Movie_DataBase
     {
         SqlConnection myConn = new SqlConnection();
         int indexSelectRow;
-        SqlCommand myComm = new SqlCommand("select Фильм_idФильм, Режиссер from Режиссер");
+        SqlCommand myComm = new SqlCommand("select*from Режиссер");
         SqlDataAdapter sda = new SqlDataAdapter(); DataSet ds = new DataSet();
 
         public Form10()
