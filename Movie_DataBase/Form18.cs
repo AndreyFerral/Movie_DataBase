@@ -13,7 +13,6 @@ namespace Movie_DataBase
         public Form18(string numberRyad, string numberMesto, string numberTiming)
         {
             InitializeComponent();
-            // задание значения параметрам
             this.numberRyad = numberRyad;
             this.numberMesto = numberMesto;
             this.numberTiming = numberTiming;

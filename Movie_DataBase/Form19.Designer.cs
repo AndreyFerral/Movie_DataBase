@@ -61,9 +61,10 @@ namespace Movie_DataBase
             this.date2,
             this.week1,
             this.cost1});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 27);
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 24);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(846, 338);
+            this.dataGridView1.Size = new System.Drawing.Size(873, 358);
             this.dataGridView1.TabIndex = 16;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -118,12 +119,14 @@ namespace Movie_DataBase
             // 
             // n_dogovor1
             // 
+            this.n_dogovor1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.n_dogovor1.DataPropertyName = "Номер_договора";
             this.n_dogovor1.HeaderText = "Номер договора";
             this.n_dogovor1.Name = "n_dogovor1";
             // 
             // n_staff1
             // 
+            this.n_staff1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.n_staff1.DataPropertyName = "Сотрудник_idСотрудник";
             this.n_staff1.HeaderText = "Номер сотрудника";
             this.n_staff1.Name = "n_staff1";
@@ -136,30 +139,35 @@ namespace Movie_DataBase
             // 
             // n_prokatchik1
             // 
+            this.n_prokatchik1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.n_prokatchik1.DataPropertyName = "Прокатчик_idПрокатчик";
             this.n_prokatchik1.HeaderText = "Номер прокатчика";
             this.n_prokatchik1.Name = "n_prokatchik1";
             // 
             // date1
             // 
+            this.date1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.date1.DataPropertyName = "Дата_Договора";
             this.date1.HeaderText = "Дата договора";
             this.date1.Name = "date1";
             // 
             // date2
             // 
+            this.date2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.date2.DataPropertyName = "Дата_проката";
             this.date2.HeaderText = "Дата проката";
             this.date2.Name = "date2";
             // 
             // week1
             // 
+            this.week1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.week1.DataPropertyName = "Количество_недель";
             this.week1.HeaderText = "Количество недель";
             this.week1.Name = "week1";
             // 
             // cost1
             // 
+            this.cost1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.cost1.DataPropertyName = "Стоимость";
             this.cost1.HeaderText = "Стоимость";
             this.cost1.Name = "cost1";
@@ -174,6 +182,7 @@ namespace Movie_DataBase
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form19";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Список договоров";
             this.Load += new System.EventHandler(this.Form19_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

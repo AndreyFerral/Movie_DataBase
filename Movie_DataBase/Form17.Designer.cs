@@ -35,10 +35,10 @@ namespace Movie_DataBase
             this.сохранениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.назадToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.timing = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mesto1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ryad1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ryad1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mesto1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timing = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -88,27 +88,9 @@ namespace Movie_DataBase
             this.назадToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(399, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(434, 24);
             this.menuStrip1.TabIndex = 13;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // timing
-            // 
-            this.timing.DataPropertyName = "Расписание_idРасписание";
-            this.timing.HeaderText = "Номер расписания";
-            this.timing.Name = "timing";
-            // 
-            // mesto1
-            // 
-            this.mesto1.DataPropertyName = "Место";
-            this.mesto1.HeaderText = "Место";
-            this.mesto1.Name = "mesto1";
-            // 
-            // ryad1
-            // 
-            this.ryad1.DataPropertyName = "Ряд";
-            this.ryad1.HeaderText = "Ряд";
-            this.ryad1.Name = "ryad1";
             // 
             // dataGridView1
             // 
@@ -118,22 +100,45 @@ namespace Movie_DataBase
             this.ryad1,
             this.mesto1,
             this.timing});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 35);
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 24);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(375, 338);
+            this.dataGridView1.Size = new System.Drawing.Size(434, 387);
             this.dataGridView1.TabIndex = 14;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // ryad1
+            // 
+            this.ryad1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ryad1.DataPropertyName = "Ряд";
+            this.ryad1.HeaderText = "Ряд";
+            this.ryad1.Name = "ryad1";
+            // 
+            // mesto1
+            // 
+            this.mesto1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.mesto1.DataPropertyName = "Место";
+            this.mesto1.HeaderText = "Место";
+            this.mesto1.Name = "mesto1";
+            // 
+            // timing
+            // 
+            this.timing.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.timing.DataPropertyName = "Расписание_idРасписание";
+            this.timing.HeaderText = "Номер расписания";
+            this.timing.Name = "timing";
             // 
             // Form17
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(399, 382);
+            this.ClientSize = new System.Drawing.Size(434, 411);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form17";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Список билетов";
             this.Load += new System.EventHandler(this.Form17_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -152,9 +157,9 @@ namespace Movie_DataBase
         private System.Windows.Forms.ToolStripMenuItem сохранениеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem назадToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn timing;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mesto1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ryad1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ryad1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mesto1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn timing;
     }
 }

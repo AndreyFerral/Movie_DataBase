@@ -34,8 +34,8 @@
             this.сохранениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.назадToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.name_Genre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.number_Genre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name_Genre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -49,7 +49,7 @@
             this.назадToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(433, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(434, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -84,38 +84,42 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.number_Genre,
             this.name_Genre});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 27);
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 24);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(410, 338);
+            this.dataGridView1.Size = new System.Drawing.Size(434, 387);
             this.dataGridView1.TabIndex = 4;
-            // 
-            // name_Genre
-            // 
-            this.name_Genre.DataPropertyName = "Жанр";
-            this.name_Genre.HeaderText = "Название жанра";
-            this.name_Genre.Name = "name_Genre";
-            this.name_Genre.Width = 250;
             // 
             // number_Genre
             // 
+            this.number_Genre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.number_Genre.DataPropertyName = "idЖанр";
             this.number_Genre.HeaderText = "Номер жанра";
             this.number_Genre.Name = "number_Genre";
+            // 
+            // name_Genre
+            // 
+            this.name_Genre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.name_Genre.DataPropertyName = "Жанр";
+            this.name_Genre.HeaderText = "Название жанра";
+            this.name_Genre.Name = "name_Genre";
             // 
             // Form9
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(433, 377);
+            this.ClientSize = new System.Drawing.Size(434, 411);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form9";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Список жанров";
             this.Load += new System.EventHandler(this.Form9_Load);
             this.menuStrip1.ResumeLayout(false);

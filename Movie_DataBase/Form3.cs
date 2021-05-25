@@ -15,6 +15,8 @@ namespace Movie_DataBase
 
         private void Form3_Load(object sender, EventArgs e)
         {
+            dataGridView1.AutoResizeColumns();
+
             // Получаем строку подключения из параметров
             string StrConn = Properties.Settings.Default.ConnStr.ToString();
 

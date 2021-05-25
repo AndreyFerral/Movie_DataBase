@@ -74,6 +74,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form4";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Добавление прокатчика";
             this.Load += new System.EventHandler(this.Form4_Load);
             this.ResumeLayout(false);

@@ -49,9 +49,10 @@ namespace Movie_DataBase
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.number_Genre,
             this.number_Film});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 25);
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 24);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(267, 338);
+            this.dataGridView1.Size = new System.Drawing.Size(434, 387);
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -65,7 +66,7 @@ namespace Movie_DataBase
             this.назадToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(401, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(434, 24);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -106,12 +107,14 @@ namespace Movie_DataBase
             // 
             // number_Genre
             // 
+            this.number_Genre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.number_Genre.DataPropertyName = "Жанр_idЖанр";
             this.number_Genre.HeaderText = "Номер жанра";
             this.number_Genre.Name = "number_Genre";
             // 
             // number_Film
             // 
+            this.number_Film.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.number_Film.DataPropertyName = "Фильм_idФильм";
             this.number_Film.HeaderText = "Номер фильма";
             this.number_Film.Name = "number_Film";
@@ -120,12 +123,13 @@ namespace Movie_DataBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(401, 372);
+            this.ClientSize = new System.Drawing.Size(434, 411);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form13";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Связь между жанром и фильмом";
             this.Load += new System.EventHandler(this.Form13_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

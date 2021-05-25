@@ -88,38 +88,37 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idФильм,
             this.Название,
             this.Описание,
             this.Длительность});
-            this.dataGridView1.Location = new System.Drawing.Point(13, 30);
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 25);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(818, 378);
+            this.dataGridView1.Size = new System.Drawing.Size(844, 397);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // idФильм
             // 
+            this.idФильм.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.idФильм.DataPropertyName = "idФильм";
             this.idФильм.HeaderText = "Номер фильма";
             this.idФильм.Name = "idФильм";
             this.idФильм.ReadOnly = true;
-            this.idФильм.Width = 80;
             // 
             // Название
             // 
+            this.Название.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Название.DataPropertyName = "Название";
             this.Название.HeaderText = "Название фильма";
             this.Название.Name = "Название";
             this.Название.ReadOnly = true;
-            this.Название.Width = 250;
+            this.Название.Width = 175;
             // 
             // Описание
             // 
@@ -131,11 +130,11 @@
             // 
             // Длительность
             // 
+            this.Длительность.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Длительность.DataPropertyName = "Длительность";
             this.Длительность.HeaderText = "Длительность";
             this.Длительность.Name = "Длительность";
             this.Длительность.ReadOnly = true;
-            this.Длительность.Width = 130;
             // 
             // Form5
             // 
@@ -147,6 +146,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form5";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Список фильмов";
             this.Load += new System.EventHandler(this.Form5_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -164,10 +164,10 @@
         private System.Windows.Forms.ToolStripMenuItem удалениеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem назадToolStripMenuItem;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ToolStripMenuItem информацияToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn idФильм;
         private System.Windows.Forms.DataGridViewTextBoxColumn Название;
         private System.Windows.Forms.DataGridViewTextBoxColumn Описание;
         private System.Windows.Forms.DataGridViewTextBoxColumn Длительность;
-        private System.Windows.Forms.ToolStripMenuItem информацияToolStripMenuItem;
     }
 }

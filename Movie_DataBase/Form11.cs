@@ -19,13 +19,13 @@ namespace Movie_DataBase
         public Form11(string numberFilm, string nameFilmMaker)
         {
             InitializeComponent();
-            // задание значения параметрам
             this.numberFilm = numberFilm;
             this.nameFilmMaker = nameFilmMaker;
         }
 
         private void Form11_Load(object sender, EventArgs e)
         {
+
             // Получаем строку подключения из параметров
             string StrConn = Properties.Settings.Default.ConnStr.ToString();
 
@@ -36,13 +36,12 @@ namespace Movie_DataBase
             // Запускаем процедуру выборки данных
             loadData();
 
-            // text1.Text = numberFilm;
             text2.Text = nameFilmMaker;
         }
 
         private void loadData()
         {
-            // Создать команду для удаления
+            // Создать команду для выборки
             SqlCommand myComm = new SqlCommand("select*from dbo.Фильм join dbo.Режиссер ON Фильм.idФильм = Режиссер.Фильм_idФильм WHERE Режиссер = @p1", myConn);
 
             // Создать параметр и передать в него значение текстового поля 

@@ -23,7 +23,6 @@ namespace Movie_DataBase
             string dateProkat, string week, string costDogovor)
         {
             InitializeComponent();
-            // задание значения параметрам
             this.numberDogovor = numberDogovor;
             this.numberStaff = numberStaff;
             this.numberFilm = numberFilm;

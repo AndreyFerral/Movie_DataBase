@@ -63,37 +63,36 @@ namespace Movie_DataBase
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idФильм,
             this.Название,
             this.Описание,
             this.Длительность});
-            this.dataGridView1.Location = new System.Drawing.Point(28, 70);
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 66);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(722, 332);
+            this.dataGridView1.Size = new System.Drawing.Size(719, 191);
             this.dataGridView1.TabIndex = 19;
             // 
             // idФильм
             // 
+            this.idФильм.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.idФильм.DataPropertyName = "idФильм";
             this.idФильм.HeaderText = "Номер фильма";
             this.idФильм.Name = "idФильм";
             this.idФильм.ReadOnly = true;
-            this.idФильм.Width = 80;
             // 
             // Название
             // 
+            this.Название.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Название.DataPropertyName = "Название";
             this.Название.HeaderText = "Название фильма";
             this.Название.Name = "Название";
             this.Название.ReadOnly = true;
-            this.Название.Width = 200;
+            this.Название.Width = 175;
             // 
             // Описание
             // 
@@ -105,23 +104,24 @@ namespace Movie_DataBase
             // 
             // Длительность
             // 
+            this.Длительность.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Длительность.DataPropertyName = "Длительность";
             this.Длительность.HeaderText = "Длительность";
             this.Длительность.Name = "Длительность";
             this.Длительность.ReadOnly = true;
-            this.Длительность.Width = 130;
             // 
             // Form11
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(763, 416);
+            this.ClientSize = new System.Drawing.Size(719, 257);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.text2);
             this.Controls.Add(this.label2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form11";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Просмотр информации о режиссере";
             this.Load += new System.EventHandler(this.Form11_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

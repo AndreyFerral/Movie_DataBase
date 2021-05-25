@@ -159,6 +159,7 @@ namespace Movie_DataBase
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Выбор таблицы из базы данных";
             this.ResumeLayout(false);
 

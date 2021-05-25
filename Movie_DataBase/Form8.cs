@@ -22,10 +22,10 @@ namespace Movie_DataBase
                     text3.Text.Trim() == "" || text4.Text.Trim() == "" || 
                     text5.Text.Trim() == "") throw new Exception();
 
-                //Создать команду для добавления
+                // Создать команду для добавления
                 SqlCommand myComm = new SqlCommand("execute add_film_filmm_genre @p1, @p2, @p3, @p4, @p5", myConn);
 
-                //Создать параметр и передать в него значение текстового поля 
+                // Создать параметр и передать в него значение текстового поля 
                 myComm.Parameters.Add("@p1", SqlDbType.NVarChar, 100);
                 myComm.Parameters["@p1"].Value = text1.Text.ToString();
 
@@ -41,10 +41,15 @@ namespace Movie_DataBase
                 myComm.Parameters.Add("@p5", SqlDbType.NVarChar, 100);
                 myComm.Parameters["@p5"].Value = text5.Text.ToString();
 
-                //вызвать процедуру без возвращения результата
+                // Вызвать процедуру без возвращения результата
                 myComm.ExecuteNonQuery();
             }
             catch { MessageBox.Show("Исключение: Все поля должны быть заполнены", "Внимание!"); }
+        }
+
+        private void Form8_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

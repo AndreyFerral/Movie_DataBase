@@ -19,14 +19,14 @@ namespace Movie_DataBase
 
         private void Form19_Load(object sender, EventArgs e)
         {
-            //Получаем строку подключения из параметров
+            // Получаем строку подключения из параметров
             string StrConn = Properties.Settings.Default.ConnStr.ToString();
 
-            //Создаем подключение 
+            // Создаем подключение 
             myConn.ConnectionString = StrConn;
             myConn.Open();
 
-            //Выборка создания и заполнения в DataSet таблицы с жанрами
+            // Выборка создания и заполнения в DataSet таблицы
             myComm.Connection = myConn;
             sda.SelectCommand = myComm;
             sda.Fill(ds, "Прокат_фильма");

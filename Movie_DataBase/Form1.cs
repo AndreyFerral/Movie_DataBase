@@ -9,7 +9,7 @@ namespace Movie_DataBase {
             InitializeComponent();
             cmbTypeAutor.Items.Add("Проверка подлинности Windows");
             cmbTypeAutor.Items.Add("Проверка подлинности SQL Server");
-            //cmbTypeAutor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+
             txtUserName.Enabled = false;
             txtPass.Enabled = false;
         }

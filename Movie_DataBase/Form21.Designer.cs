@@ -99,9 +99,6 @@ namespace Movie_DataBase
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_timing,
@@ -110,46 +107,53 @@ namespace Movie_DataBase
             this.Длительность,
             this.datetime,
             this.cost});
-            this.dataGridView1.Location = new System.Drawing.Point(13, 29);
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 24);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(703, 386);
+            this.dataGridView1.Size = new System.Drawing.Size(729, 405);
             this.dataGridView1.TabIndex = 23;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // id_timing
             // 
+            this.id_timing.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.id_timing.DataPropertyName = "idРасписание";
             this.id_timing.HeaderText = "Номер расписания";
             this.id_timing.Name = "id_timing";
             // 
             // id_prokat
             // 
+            this.id_prokat.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.id_prokat.DataPropertyName = "Прокат_фильма_Номер_договора";
             this.id_prokat.HeaderText = "Номер проката";
             this.id_prokat.Name = "id_prokat";
             // 
             // id_hall
             // 
+            this.id_hall.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.id_hall.DataPropertyName = "Зал_idЗал";
             this.id_hall.HeaderText = "Номер зала";
             this.id_hall.Name = "id_hall";
             // 
             // Длительность
             // 
+            this.Длительность.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Длительность.DataPropertyName = "Сотрудник_idСотрудник";
             this.Длительность.HeaderText = "Номер сотрудника";
             this.Длительность.Name = "Длительность";
             // 
             // datetime
             // 
+            this.datetime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.datetime.DataPropertyName = "Дата_время";
             this.datetime.HeaderText = "Дата и время";
             this.datetime.Name = "datetime";
-            this.datetime.Width = 150;
+            this.datetime.Width = 125;
             // 
             // cost
             // 
+            this.cost.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.cost.DataPropertyName = "Стоимость";
             this.cost.HeaderText = "Стоимость";
             this.cost.Name = "cost";
@@ -164,6 +168,7 @@ namespace Movie_DataBase
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form21";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Список расписаний";
             this.Load += new System.EventHandler(this.Form21_Load);
             this.menuStrip1.ResumeLayout(false);

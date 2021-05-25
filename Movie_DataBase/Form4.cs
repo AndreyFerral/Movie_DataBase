@@ -11,7 +11,6 @@ namespace Movie_DataBase
         public Form4(SqlConnection myConn)
         {
             InitializeComponent();
-            // задание значения параметру
             this.myConn = myConn;
         }
             

@@ -28,7 +28,7 @@ namespace Movie_DataBase
             {
                 if (textBox2.Text.Trim() == "") throw new Exception();
 
-                // Создать команду для удаления
+                // Создать команду для изменения
                 SqlCommand myComm = new SqlCommand("UPDATE dbo.Прокатчик SET Название = @p1 where idПрокатчик = @p2", myConn);
 
                 // Создать параметр и передать в него значение текстового поля 
@@ -38,7 +38,7 @@ namespace Movie_DataBase
                 myComm.Parameters.Add("@p2", SqlDbType.NVarChar, 10);
                 myComm.Parameters["@p2"].Value = numberGenre;
 
-                // Выполнить запрос на удаление без возвращения результата
+                // Выполнить запрос на изменение без возвращения результата
                 myComm.ExecuteNonQuery();
             }
             catch { MessageBox.Show("Исключение: Возможно вы ввели пустую строку", "Внимание!"); }

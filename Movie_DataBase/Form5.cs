@@ -15,20 +15,23 @@ namespace Movie_DataBase
         }
 
         private void Form5_Load(object sender, EventArgs e) {
-            //Получаем строку подключения из параметров
+            // Получаем строку подключения из параметров
             string StrConn = Properties.Settings.Default.ConnStr.ToString();
-            //Создаем подключение 
+
+            // Создаем подключение 
             myConn.ConnectionString = StrConn;
             myConn.Open();
-            //Запускаем процедуру выборки данных
+
+            // Запускаем процедуру выборки данных
             loadData();
         }
 
         private void loadData() {
-            //Создаем команду для выборки данных
+            // Создаем команду для выборки данных
             SqlCommand myComm = new SqlCommand("select*from dbo.Фильм", myConn);
             SqlDataReader myReader = myComm.ExecuteReader();
-            //Заполняем данными
+
+            // Заполняем данными
             DataTable dt = new DataTable(); dt.Load(myReader);
             dataGridView1.AutoGenerateColumns = false; dataGridView1.DataSource = dt; dataGridView1.Refresh();
         }
@@ -96,18 +99,5 @@ namespace Movie_DataBase
             loadData();
         }
 
-        private void добавлениеЖанраИлиРежиссераToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DataGridViewRow SelectedRow = dataGridView1.Rows[indexSelectRow];
-            string numberFilm = SelectedRow.Cells[0].Value.ToString();
-            string nameFilm = SelectedRow.Cells[1].Value.ToString();
-            string description = SelectedRow.Cells[2].Value.ToString();
-            string howmuch = SelectedRow.Cells[3].Value.ToString();
-
-            Form12 form12 = new Form12(numberFilm, nameFilm, description, howmuch);
-            form12.ShowDialog();
-
-            loadData();
-        }
     }
 }

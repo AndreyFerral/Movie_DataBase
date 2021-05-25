@@ -19,19 +19,18 @@ namespace Movie_DataBase
 
         private void Form10_Load(object sender, EventArgs e)
         {
-            //Получаем строку подключения из параметров
+            // Получаем строку подключения из параметров
             string StrConn = Properties.Settings.Default.ConnStr.ToString();
 
-            //Создаем подключение 
+            // Создаем подключение 
             myConn.ConnectionString = StrConn;
             myConn.Open();
 
-            //Выборка создания и заполнения в DataSet таблицы с жанрами
+            // Выборка создания и заполнения в DataSet таблицы
             myComm.Connection = myConn;
             sda.SelectCommand = myComm;
             sda.Fill(ds, "Режиссер");
 
-            // dataGridView1.Columns[0].ReadOnly = true; // не надо блокировать id
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.DataSource = ds.Tables["Режиссер"];
             dataGridView1.Refresh();
@@ -82,6 +81,7 @@ namespace Movie_DataBase
                 // Создаем команды манипулирования данными
                 SqlCommandBuilder scb = new SqlCommandBuilder(sda);
                 scb.GetUpdateCommand(); scb.GetDeleteCommand(); scb.GetInsertCommand();
+
                 // Отправляем изменения в БД
                 sda.Update(ds.Tables["Режиссер"]);
             }

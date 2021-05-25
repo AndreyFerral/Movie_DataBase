@@ -9,7 +9,7 @@ namespace Movie_DataBase
     {
         SqlConnection myConn = new SqlConnection();
         int indexSelectRow;
-        SqlCommand myComm = new SqlCommand("select idЖанр, Жанр from Жанр");
+        SqlCommand myComm = new SqlCommand("select*from dbo.Жанр");
         SqlDataAdapter sda = new SqlDataAdapter(); DataSet ds = new DataSet();
 
         public Form9()
@@ -19,14 +19,14 @@ namespace Movie_DataBase
 
         private void Form9_Load(object sender, EventArgs e)
         {
-            //Получаем строку подключения из параметров
+            // Получаем строку подключения из параметров
             string StrConn = Properties.Settings.Default.ConnStr.ToString();
 
-            //Создаем подключение 
+            // Создаем подключение 
             myConn.ConnectionString = StrConn;
             myConn.Open();
 
-            //Выборка создания и заполнения в DataSet таблицы с жанрами
+            // Выборка создания и заполнения в DataSet таблицы с жанрами
             myComm.Connection = myConn;
             sda.SelectCommand = myComm;
             sda.Fill(ds, "Жанр");
@@ -80,10 +80,12 @@ namespace Movie_DataBase
                 // Создаем команды манипулирования данными
                 SqlCommandBuilder scb = new SqlCommandBuilder(sda);
                 scb.GetUpdateCommand(); scb.GetDeleteCommand(); scb.GetInsertCommand();
+
                 // Отправляем изменения в БД
                 sda.Update(ds.Tables["Жанр"]);
             }
             catch { MessageBox.Show("Необходимо заполнить добавленную строку", "Внимание!"); }
         }
+
     }
 }

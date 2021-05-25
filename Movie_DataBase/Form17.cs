@@ -19,19 +19,18 @@ namespace Movie_DataBase
 
         private void Form17_Load(object sender, EventArgs e)
         {
-            //Получаем строку подключения из параметров
+            // Получаем строку подключения из параметров
             string StrConn = Properties.Settings.Default.ConnStr.ToString();
 
-            //Создаем подключение 
+            // Создаем подключение 
             myConn.ConnectionString = StrConn;
             myConn.Open();
 
-            //Выборка создания и заполнения в DataSet таблицы с жанрами
+            // Выборка создания и заполнения в DataSet таблицы
             myComm.Connection = myConn;
             sda.SelectCommand = myComm;
             sda.Fill(ds, "Билетик");
 
-            // dataGridView1.Columns[0].ReadOnly = true;
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.DataSource = ds.Tables["Билетик"];
             dataGridView1.Refresh();
