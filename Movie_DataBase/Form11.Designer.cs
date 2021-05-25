@@ -76,7 +76,7 @@ namespace Movie_DataBase
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(724, 332);
+            this.dataGridView1.Size = new System.Drawing.Size(722, 332);
             this.dataGridView1.TabIndex = 19;
             // 
             // idФильм
@@ -115,7 +115,7 @@ namespace Movie_DataBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(779, 416);
+            this.ClientSize = new System.Drawing.Size(763, 416);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.text2);
             this.Controls.Add(this.label2);

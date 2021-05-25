@@ -34,8 +34,8 @@
             this.сохранениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.назадToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.number_Genre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name_Genre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.number_Genre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -93,18 +93,18 @@
             this.dataGridView1.Size = new System.Drawing.Size(410, 338);
             this.dataGridView1.TabIndex = 4;
             // 
-            // number_Genre
-            // 
-            this.number_Genre.DataPropertyName = "idЖанр";
-            this.number_Genre.HeaderText = "Номер жанра";
-            this.number_Genre.Name = "number_Genre";
-            // 
             // name_Genre
             // 
             this.name_Genre.DataPropertyName = "Жанр";
             this.name_Genre.HeaderText = "Название жанра";
             this.name_Genre.Name = "name_Genre";
             this.name_Genre.Width = 250;
+            // 
+            // number_Genre
+            // 
+            this.number_Genre.DataPropertyName = "idЖанр";
+            this.number_Genre.HeaderText = "Номер жанра";
+            this.number_Genre.Name = "number_Genre";
             // 
             // Form9
             // 
