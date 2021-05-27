@@ -44,7 +44,11 @@ namespace Movie_DataBase
                 // Вызвать процедуру без возвращения результата
                 myComm.ExecuteNonQuery();
             }
-            catch { MessageBox.Show("Исключение: Все поля должны быть заполнены", "Внимание!"); }
+            catch {
+                MessageBox.Show("Ошибка. Возможное решение:\n\n " +
+                "1. Все поля должны быть заполнены.\n\n " +
+                "2. Длительность фильма должна быть от 15 до 240 минут.", "Внимание!");
+            }
         }
 
         private void Form8_Load(object sender, EventArgs e)

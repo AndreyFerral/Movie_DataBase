@@ -101,11 +101,12 @@ namespace Movie_DataBase
             // 
             // idProkat
             // 
-            this.idProkat.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idProkat.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.idProkat.DataPropertyName = "idПрокатчик";
             this.idProkat.HeaderText = "Номер прокатчика";
             this.idProkat.Name = "idProkat";
             this.idProkat.ReadOnly = true;
+            this.idProkat.Width = 160;
             // 
             // nameProkat
             // 

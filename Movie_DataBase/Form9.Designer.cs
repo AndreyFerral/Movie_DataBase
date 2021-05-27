@@ -34,7 +34,7 @@
             this.сохранениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.назадToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.number_Genre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.number_genre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name_Genre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -87,7 +87,7 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.number_Genre,
+            this.number_genre,
             this.name_Genre});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 24);
@@ -97,12 +97,13 @@
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // number_Genre
+            // number_genre
             // 
-            this.number_Genre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.number_Genre.DataPropertyName = "idЖанр";
-            this.number_Genre.HeaderText = "Номер жанра";
-            this.number_Genre.Name = "number_Genre";
+            this.number_genre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.number_genre.DataPropertyName = "idЖанр";
+            this.number_genre.HeaderText = "Номер жанра";
+            this.number_genre.Name = "number_genre";
+            this.number_genre.Width = 135;
             // 
             // name_Genre
             // 
@@ -139,7 +140,7 @@
         private System.Windows.Forms.ToolStripMenuItem назадToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сохранениеToolStripMenuItem;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn number_Genre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn number_genre;
         private System.Windows.Forms.DataGridViewTextBoxColumn name_Genre;
     }
 }

@@ -74,7 +74,7 @@ namespace Movie_DataBase
                     loadData();
                 }
             }
-            catch { MessageBox.Show("Почему-то вызвалось исключение. Выполните двойной щелчок по названию фильма", "Внимание!"); }
+            catch { }
         }
 
         private void информацияToolStripMenuItem_Click(object sender, EventArgs e)
@@ -85,7 +85,7 @@ namespace Movie_DataBase
             string description = SelectedRow.Cells[2].Value.ToString();
             string howmuch = SelectedRow.Cells[3].Value.ToString();
 
-            Form6 form6 = new Form6(numberFilm, nameFilm, description, howmuch);
+            Form6 form6 = new Form6(myConn, numberFilm, nameFilm, description, howmuch);
             form6.ShowDialog();
 
             loadData();

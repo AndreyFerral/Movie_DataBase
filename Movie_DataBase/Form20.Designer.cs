@@ -48,16 +48,16 @@ namespace Movie_DataBase
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.idФильм = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Название = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Описание = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.idProkat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameProkat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.number_Staff = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name_staff = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.s_post = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -272,13 +272,64 @@ namespace Movie_DataBase
             this.dataGridView1.Size = new System.Drawing.Size(808, 140);
             this.dataGridView1.TabIndex = 24;
             // 
+            // tabPage3
+            // 
+            this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage3.Controls.Add(this.dataGridView3);
+            this.tabPage3.Location = new System.Drawing.Point(4, 29);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(814, 146);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Прокатчик";
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.AllowUserToAddRows = false;
+            this.dataGridView3.AllowUserToDeleteRows = false;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idProkat,
+            this.nameProkat});
+            this.dataGridView3.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
+            this.dataGridView3.Size = new System.Drawing.Size(469, 140);
+            this.dataGridView3.TabIndex = 2;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage4.Controls.Add(this.dataGridView2);
+            this.tabPage4.Location = new System.Drawing.Point(4, 29);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(814, 146);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Сотрудник";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.number_Staff,
+            this.name_staff,
+            this.s_post,
+            this.number});
+            this.dataGridView2.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.Size = new System.Drawing.Size(618, 140);
+            this.dataGridView2.TabIndex = 11;
+            // 
             // idФильм
             // 
-            this.idФильм.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idФильм.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.idФильм.DataPropertyName = "idФильм";
             this.idФильм.HeaderText = "Номер фильма";
             this.idФильм.Name = "idФильм";
             this.idФильм.ReadOnly = true;
+            this.idФильм.Width = 138;
             // 
             // Название
             // 
@@ -305,71 +356,22 @@ namespace Movie_DataBase
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
-            // tabPage3
-            // 
-            this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage3.Controls.Add(this.dataGridView3);
-            this.tabPage3.Location = new System.Drawing.Point(4, 29);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(814, 146);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Прокатчик";
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.AllowUserToAddRows = false;
-            this.dataGridView3.AllowUserToDeleteRows = false;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idProkat,
-            this.nameProkat});
-            this.dataGridView3.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.ReadOnly = true;
-            this.dataGridView3.Size = new System.Drawing.Size(469, 140);
-            this.dataGridView3.TabIndex = 2;
-            // 
             // idProkat
             // 
-            this.idProkat.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idProkat.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.idProkat.DataPropertyName = "idПрокатчик";
             this.idProkat.HeaderText = "Номер прокатчика";
             this.idProkat.Name = "idProkat";
             this.idProkat.ReadOnly = true;
+            this.idProkat.Width = 160;
             // 
             // nameProkat
             // 
-            this.nameProkat.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.nameProkat.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.nameProkat.DataPropertyName = "Название";
             this.nameProkat.HeaderText = "Наименование прокатчика";
             this.nameProkat.Name = "nameProkat";
             this.nameProkat.ReadOnly = true;
-            this.nameProkat.Width = 217;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage4.Controls.Add(this.dataGridView2);
-            this.tabPage4.Location = new System.Drawing.Point(4, 29);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(814, 146);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Сотрудник";
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.number_Staff,
-            this.name_staff,
-            this.s_post,
-            this.number});
-            this.dataGridView2.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(618, 140);
-            this.dataGridView2.TabIndex = 11;
             // 
             // number_Staff
             // 
@@ -398,12 +400,11 @@ namespace Movie_DataBase
             // 
             // number
             // 
-            this.number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.number.DataPropertyName = "Телефон";
             this.number.HeaderText = "Телефон";
             this.number.Name = "number";
             this.number.ReadOnly = true;
-            this.number.Width = 104;
             // 
             // Form20
             // 

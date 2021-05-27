@@ -30,15 +30,15 @@ namespace Movie_DataBase
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.number_Staff = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name_staff = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.s_post = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.добавлениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сохранениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.назадToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.number_Staff = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name_staff = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.s_post = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -59,34 +59,6 @@ namespace Movie_DataBase
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // number_Staff
-            // 
-            this.number_Staff.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.number_Staff.DataPropertyName = "idСотрудник";
-            this.number_Staff.HeaderText = "Номер сотрудника";
-            this.number_Staff.Name = "number_Staff";
-            // 
-            // name_staff
-            // 
-            this.name_staff.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.name_staff.DataPropertyName = "ФИО";
-            this.name_staff.HeaderText = "ФИО";
-            this.name_staff.Name = "name_staff";
-            // 
-            // s_post
-            // 
-            this.s_post.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.s_post.DataPropertyName = "Должность";
-            this.s_post.HeaderText = "Должность";
-            this.s_post.Name = "s_post";
-            // 
-            // number
-            // 
-            this.number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.number.DataPropertyName = "Телефон";
-            this.number.HeaderText = "Телефон";
-            this.number.Name = "number";
             // 
             // menuStrip1
             // 
@@ -128,6 +100,34 @@ namespace Movie_DataBase
             this.назадToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.назадToolStripMenuItem.Text = "Назад";
             this.назадToolStripMenuItem.Click += new System.EventHandler(this.назадToolStripMenuItem_Click);
+            // 
+            // number_Staff
+            // 
+            this.number_Staff.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.number_Staff.DataPropertyName = "idСотрудник";
+            this.number_Staff.HeaderText = "Номер сотрудника";
+            this.number_Staff.Name = "number_Staff";
+            // 
+            // name_staff
+            // 
+            this.name_staff.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.name_staff.DataPropertyName = "ФИО";
+            this.name_staff.HeaderText = "ФИО";
+            this.name_staff.Name = "name_staff";
+            // 
+            // s_post
+            // 
+            this.s_post.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.s_post.DataPropertyName = "Должность";
+            this.s_post.HeaderText = "Должность";
+            this.s_post.Name = "s_post";
+            // 
+            // number
+            // 
+            this.number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.number.DataPropertyName = "Телефон";
+            this.number.HeaderText = "Телефон";
+            this.number.Name = "number";
             // 
             // Form15
             // 
