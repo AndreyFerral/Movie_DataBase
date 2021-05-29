@@ -35,10 +35,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.text5 = new System.Windows.Forms.TextBox();
-            this.text4 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // button1
@@ -54,7 +54,7 @@
             // 
             // text3
             // 
-            this.text3.Location = new System.Drawing.Point(175, 96);
+            this.text3.Location = new System.Drawing.Point(175, 94);
             this.text3.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.text3.Name = "text3";
             this.text3.Size = new System.Drawing.Size(296, 26);
@@ -62,7 +62,7 @@
             // 
             // text2
             // 
-            this.text2.Location = new System.Drawing.Point(175, 60);
+            this.text2.Location = new System.Drawing.Point(175, 59);
             this.text2.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.text2.Name = "text2";
             this.text2.Size = new System.Drawing.Size(296, 26);
@@ -109,22 +109,6 @@
             this.label2.TabIndex = 26;
             this.label2.Text = "Название";
             // 
-            // text5
-            // 
-            this.text5.Location = new System.Drawing.Point(175, 168);
-            this.text5.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.text5.Name = "text5";
-            this.text5.Size = new System.Drawing.Size(296, 26);
-            this.text5.TabIndex = 37;
-            // 
-            // text4
-            // 
-            this.text4.Location = new System.Drawing.Point(175, 132);
-            this.text4.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.text4.Name = "text4";
-            this.text4.Size = new System.Drawing.Size(296, 26);
-            this.text4.TabIndex = 36;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -147,13 +131,29 @@
             this.label6.TabIndex = 33;
             this.label6.Text = "Режиссер";
             // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(175, 129);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(296, 28);
+            this.comboBox4.TabIndex = 35;
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Location = new System.Drawing.Point(175, 166);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(296, 28);
+            this.comboBox5.TabIndex = 36;
+            // 
             // Form8
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 261);
-            this.Controls.Add(this.text5);
-            this.Controls.Add(this.text4);
+            this.Controls.Add(this.comboBox5);
+            this.Controls.Add(this.comboBox4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button1);
@@ -183,9 +183,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox text5;
-        private System.Windows.Forms.TextBox text4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox comboBox5;
     }
 }

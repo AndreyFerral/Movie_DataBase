@@ -13,14 +13,19 @@ namespace Movie_DataBase
             InitializeComponent();
             this.myConn = myConn;
         }
+        private void Form8_Load(object sender, EventArgs e)
+        {
+            loadData1ComboBox();
+            loadData2ComboBox();
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
             try
             {
                 if (text1.Text.Trim() == "" || text2.Text.Trim() == "" || 
-                    text3.Text.Trim() == "" || text4.Text.Trim() == "" || 
-                    text5.Text.Trim() == "") throw new Exception();
+                    text3.Text.Trim() == "" || comboBox4.Text.Trim() == "" ||
+                    comboBox5.Text.Trim() == "") throw new Exception();
 
                 // Создать команду для добавления
                 SqlCommand myComm = new SqlCommand("execute add_film_filmm_genre @p1, @p2, @p3, @p4, @p5", myConn);
@@ -33,13 +38,13 @@ namespace Movie_DataBase
                 myComm.Parameters["@p2"].Value = text2.Text.ToString();
 
                 myComm.Parameters.Add("@p3", SqlDbType.Int);
-                myComm.Parameters["@p3"].Value = text3.Text;
+                myComm.Parameters["@p3"].Value = text3.Text.ToString();
 
                 myComm.Parameters.Add("@p4", SqlDbType.NVarChar, 100);
-                myComm.Parameters["@p4"].Value = text4.Text.ToString();
+                myComm.Parameters["@p4"].Value = comboBox4.Text.ToString();
 
                 myComm.Parameters.Add("@p5", SqlDbType.NVarChar, 100);
-                myComm.Parameters["@p5"].Value = text5.Text.ToString();
+                myComm.Parameters["@p5"].Value = comboBox5.Text.ToString();
 
                 // Вызвать процедуру без возвращения результата
                 myComm.ExecuteNonQuery();
@@ -51,9 +56,22 @@ namespace Movie_DataBase
             }
         }
 
-        private void Form8_Load(object sender, EventArgs e)
+        private void loadData1ComboBox()
         {
+            SqlDataAdapter sqlDa = new SqlDataAdapter("select distinct Режиссер from Режиссер", myConn);
+            DataTable dtbl = new DataTable();
+            sqlDa.Fill(dtbl);
+            comboBox4.DisplayMember = "Режиссер";
+            comboBox4.DataSource = dtbl;
+        }
 
+        private void loadData2ComboBox()
+        {
+            SqlDataAdapter sqlDa = new SqlDataAdapter("select * from Жанр", myConn);
+            DataTable dtbl = new DataTable();
+            sqlDa.Fill(dtbl);
+            comboBox5.DisplayMember = "Жанр";
+            comboBox5.DataSource = dtbl;
         }
     }
 }

@@ -84,6 +84,7 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -103,7 +104,7 @@
             this.number_genre.DataPropertyName = "idЖанр";
             this.number_genre.HeaderText = "Номер жанра";
             this.number_genre.Name = "number_genre";
-            this.number_genre.Width = 135;
+            this.number_genre.Width = 123;
             // 
             // name_Genre
             // 

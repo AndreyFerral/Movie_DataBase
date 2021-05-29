@@ -32,9 +32,6 @@ namespace Movie_DataBase
             sda.Fill(ds, "Прокат_фильма");
 
             dataGridView1.Columns[0].ReadOnly = true;
-            dataGridView1.Columns[1].ReadOnly = true;
-            dataGridView1.Columns[2].ReadOnly = true;
-            dataGridView1.Columns[3].ReadOnly = true;
 
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.DataSource = ds.Tables["Прокат_фильма"];
