@@ -58,16 +58,16 @@ namespace Movie_DataBase
             this.datetime,
             this.cost});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 137);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 122);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(697, 207);
+            this.dataGridView1.Size = new System.Drawing.Size(697, 109);
             this.dataGridView1.TabIndex = 22;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(186, 98);
+            this.textBox3.Location = new System.Drawing.Point(186, 83);
             this.textBox3.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
@@ -78,7 +78,7 @@ namespace Movie_DataBase
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label2.Location = new System.Drawing.Point(24, 20);
+            this.label2.Location = new System.Drawing.Point(20, 20);
             this.label2.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 20);
@@ -87,7 +87,7 @@ namespace Movie_DataBase
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(186, 14);
+            this.textBox1.Location = new System.Drawing.Point(186, 17);
             this.textBox1.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
@@ -98,7 +98,7 @@ namespace Movie_DataBase
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label1.Location = new System.Drawing.Point(24, 62);
+            this.label1.Location = new System.Drawing.Point(20, 53);
             this.label1.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 20);
@@ -107,7 +107,7 @@ namespace Movie_DataBase
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(186, 56);
+            this.textBox2.Location = new System.Drawing.Point(186, 50);
             this.textBox2.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
@@ -118,7 +118,7 @@ namespace Movie_DataBase
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label3.Location = new System.Drawing.Point(24, 104);
+            this.label3.Location = new System.Drawing.Point(20, 86);
             this.label3.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(151, 20);
@@ -127,6 +127,7 @@ namespace Movie_DataBase
             // 
             // id_timing
             // 
+            this.id_timing.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.id_timing.DataPropertyName = "idРасписание";
             this.id_timing.HeaderText = "Номер расписания";
             this.id_timing.Name = "id_timing";
@@ -134,6 +135,7 @@ namespace Movie_DataBase
             // 
             // id_prokat
             // 
+            this.id_prokat.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.id_prokat.DataPropertyName = "Прокат_фильма_Номер_договора";
             this.id_prokat.HeaderText = "Номер проката";
             this.id_prokat.Name = "id_prokat";
@@ -141,38 +143,45 @@ namespace Movie_DataBase
             // 
             // id_hall
             // 
+            this.id_hall.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.id_hall.DataPropertyName = "Название";
             this.id_hall.HeaderText = "Зал";
             this.id_hall.Name = "id_hall";
             this.id_hall.ReadOnly = true;
+            this.id_hall.Width = 64;
             // 
             // Длительность
             // 
+            this.Длительность.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Длительность.DataPropertyName = "ФИО";
             this.Длительность.HeaderText = "Сотрудник";
             this.Длительность.Name = "Длительность";
             this.Длительность.ReadOnly = true;
+            this.Длительность.Width = 116;
             // 
             // datetime
             // 
+            this.datetime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.datetime.DataPropertyName = "Дата_время";
             this.datetime.HeaderText = "Дата и время";
             this.datetime.Name = "datetime";
             this.datetime.ReadOnly = true;
-            this.datetime.Width = 150;
+            this.datetime.Width = 137;
             // 
             // cost
             // 
+            this.cost.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.cost.DataPropertyName = "Стоимость";
             this.cost.HeaderText = "Стоимость";
             this.cost.Name = "cost";
             this.cost.ReadOnly = true;
+            this.cost.Width = 118;
             // 
             // Form18
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(697, 344);
+            this.ClientSize = new System.Drawing.Size(697, 231);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox1);

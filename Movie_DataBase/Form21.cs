@@ -9,8 +9,10 @@ namespace Movie_DataBase
     {
         SqlConnection myConn = new SqlConnection();
         int indexSelectRow;
-        SqlCommand myComm = new SqlCommand("select*from Расписание");
-        SqlDataAdapter sda = new SqlDataAdapter(); DataSet ds = new DataSet();
+        
+        string curNumberTiming, curNumberDogovor, curNameHall, 
+            curNameStaff, curDateTime, curCost;
+        
 
         public Form21()
         {
@@ -24,27 +26,34 @@ namespace Movie_DataBase
 
             // Создаем подключение 
             myConn.ConnectionString = StrConn;
-            myConn.Open();
 
-            // Выборка создания и заполнения в DataSet таблицы с жанрами
-            myComm.Connection = myConn;
-            sda.SelectCommand = myComm;
-            sda.Fill(ds, "Расписание");
+            // Заполняем объект типа ComboBox
+            loadData1ComboBox();
+            loadData2ComboBox();
+            loadData3ComboBox();
 
-            dataGridView1.Columns[0].ReadOnly = true;
-
-            dataGridView1.AutoGenerateColumns = false;
-            dataGridView1.DataSource = ds.Tables["Расписание"];
-            dataGridView1.Refresh();
+            // Запускаем процедуру выборки данных
+            loadData();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            indexSelectRow = e.RowIndex;
+            // Для того, чтобы не обновлялись значения, если нажатия происходит в одной строке
+            if (e.RowIndex != indexSelectRow)
+            {
+                indexSelectRow = e.RowIndex;
+
+                curNumberTiming = dataGridView1[0, indexSelectRow].Value.ToString();
+                curNumberDogovor = dataGridView1[1, indexSelectRow].Value.ToString();
+                curNameHall = dataGridView1[2, indexSelectRow].Value.ToString();
+                curNameStaff = dataGridView1[3, indexSelectRow].Value.ToString();
+                curDateTime = dataGridView1[4, indexSelectRow].Value.ToString();
+                curCost = dataGridView1[5, indexSelectRow].Value.ToString();
+                
+            }
         }
         private void Form21_FormClosing(object sender, FormClosingEventArgs e)
         {
-            myConn.Close();
             Application.Exit();
         }
 
@@ -58,55 +67,94 @@ namespace Movie_DataBase
 
         private void добавлениеToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ds.Tables["Расписание"].Rows.Add();
+ 
         }
 
         private void удалениеToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            try
-            {
-                DialogResult result = MessageBox.Show("Будет удалена вся информация о расписании. Продолжить?", "Внимание!", MessageBoxButtons.YesNo);
-                if (result == DialogResult.Yes)
-                {
-                    int rowIndex = dataGridView1.CurrentCell.RowIndex;
-                    dataGridView1.Rows.RemoveAt(rowIndex);
-                }
-            }
-            catch { MessageBox.Show("Почему-то вызвалось исключение", "Внимание!"); }
-        }
 
-        private void информацияToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DataGridViewRow SelectedRow = dataGridView1.Rows[indexSelectRow];
-
-            string numberTiming = SelectedRow.Cells[0].Value.ToString(), 
-                numberDogovor = SelectedRow.Cells[1].Value.ToString(), 
-                numberHall = SelectedRow.Cells[2].Value.ToString(),
-                numberStaff = SelectedRow.Cells[3].Value.ToString(),
-                dateD = SelectedRow.Cells[4].Value.ToString(), 
-                costDogovor = SelectedRow.Cells[5].Value.ToString();
-
-            Form22 form22 = new Form22(numberTiming, numberDogovor, numberHall, numberStaff,dateD, costDogovor);
-            form22.ShowDialog();
         }
 
         private void сохранениеToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void информацияToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             try
             {
-                // Создаем команды манипулирования данными
-                SqlCommandBuilder scb = new SqlCommandBuilder(sda);
-                scb.GetUpdateCommand(); scb.GetDeleteCommand(); scb.GetInsertCommand();
+                if (curNumberTiming.Trim() == "" || curNumberDogovor.Trim() == "" ||
+                    curNameHall.Trim() == "" || curNameStaff.Trim() == "" ||
+                    curDateTime.Trim() == "" || curCost.Trim() == "") throw new Exception();
 
-                // Отправляем изменения в БД
-                sda.Update(ds.Tables["Расписание"]);
+                Form22 form22 = new Form22(curNumberTiming, curNumberDogovor, curNameHall,
+                    curNameStaff, curDateTime, curCost);
+                form22.ShowDialog();
             }
             catch
             {
-                MessageBox.Show("Ошибка. Возможное решение:\n\n" +
-                " 1. Необходимо заполнить добавленную строку.\n\n" +
-                " 2. Какой-либо из номеров отсутствует в базе данных.", "Внимание!");
+                MessageBox.Show("Ошибка. Возможное решение:\n\n " +
+                                "1. Возможно вы пытаетесь посмотреть информацию о несуществующих данных.", "Внимание!");
             }
+        }
+
+        private void loadData1ComboBox()
+        {
+            myConn.Open();
+
+            SqlDataAdapter sqlDa = new SqlDataAdapter("select ФИО from Сотрудник", myConn);
+            DataTable dtbl = new DataTable();
+            sqlDa.Fill(dtbl);
+            staff_name.DisplayMember = "ФИО";
+            staff_name.DataSource = dtbl;
+
+            myConn.Close();
+        }
+        private void loadData2ComboBox()
+        {
+            myConn.Open();
+
+            SqlDataAdapter sqlDa = new SqlDataAdapter("select Название from Зал", myConn);
+            DataTable dtbl = new DataTable();
+            sqlDa.Fill(dtbl);
+            hall_name.DisplayMember = "Название";
+            hall_name.DataSource = dtbl;
+
+            myConn.Close();
+        }
+
+        private void loadData3ComboBox()
+        {
+            myConn.Open();
+
+            SqlDataAdapter sqlDa = new SqlDataAdapter("select Номер_договора from Прокат_фильма", myConn);
+            DataTable dtbl = new DataTable();
+            sqlDa.Fill(dtbl);
+            dogovor_number.DisplayMember = "Номер_договора";
+            dogovor_number.DataSource = dtbl;
+
+            myConn.Close();
+        }
+
+        private void loadData()
+        {
+            myConn.Open();
+            SqlCommand myComm = new SqlCommand("select idРасписание, Номер_договора, ФИО, Название, Дата_время, Стоимость from dbo.View_Timing", myConn);
+
+            SqlDataReader myReader = myComm.ExecuteReader();
+            DataTable dtbl = new DataTable(); dtbl.Load(myReader);
+            dataGridView1.DataSource = dtbl;
+            myConn.Close();
+
+            indexSelectRow = 0;
+
+            curNumberTiming = dataGridView1[0, indexSelectRow].Value.ToString();
+            curNumberDogovor = dataGridView1[1, indexSelectRow].Value.ToString();
+            curNameHall = dataGridView1[2, indexSelectRow].Value.ToString();
+            curNameStaff = dataGridView1[3, indexSelectRow].Value.ToString();
+            curDateTime = dataGridView1[4, indexSelectRow].Value.ToString();
+            curCost = dataGridView1[5, indexSelectRow].Value.ToString();
         }
     }
 }

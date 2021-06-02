@@ -48,8 +48,6 @@ namespace Movie_DataBase
             Application.Exit();
         }
 
-
-
         private void добавлениеToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             try
@@ -171,18 +169,15 @@ namespace Movie_DataBase
         private void информацияToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try {
-                DataGridViewRow SelectedRow = dataGridView1.Rows[indexSelectRow];
-                string nameGenre = SelectedRow.Cells[0].Value.ToString();
-                string nameFilm = SelectedRow.Cells[1].Value.ToString();
-                if (nameFilm.Trim() == "" || nameGenre.Trim() == "") throw new Exception();
+                if (currentNameFilm.Trim() == "" || currentNameFilmGenre.Trim() == "") throw new Exception();
 
-                Form14 form14 = new Form14(nameGenre, nameFilm);
+                Form14 form14 = new Form14(currentNameFilm, currentNameFilmGenre);
                 form14.ShowDialog();
             }
             catch
             {
                 MessageBox.Show("Ошибка. Возможное решение:\n\n " +
-                                "1. Возможно вы пытаетесь посмотреть информацию о пустой строке.", "Внимание!");
+                                "1. Возможно вы пытаетесь посмотреть информацию о несуществующих данных.", "Внимание!");
             }
         }
 

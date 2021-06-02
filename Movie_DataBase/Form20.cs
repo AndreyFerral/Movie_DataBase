@@ -10,23 +10,23 @@ namespace Movie_DataBase
         SqlConnection myConn = new SqlConnection();
 
         string numberDogovor;
-        string numberStaff;
-        string numberFilm;
-        string numberProkatchik;
+        string nameStaff;
+        string nameFilm;
+        string nameProkatchik;
         string dateDogovor;
         string dateProkat;
         string week;
         string costDogovor;
 
-        public Form20(string numberDogovor, string numberStaff, string numberFilm, 
-            string numberProkatchik, string dateDogovor, 
+        public Form20(string numberDogovor, string nameStaff, string nameFilm, 
+            string nameProkatchik, string dateDogovor, 
             string dateProkat, string week, string costDogovor)
         {
             InitializeComponent();
             this.numberDogovor = numberDogovor;
-            this.numberStaff = numberStaff;
-            this.numberFilm = numberFilm;
-            this.numberProkatchik = numberProkatchik;
+            this.nameStaff = nameStaff;
+            this.nameFilm = nameFilm;
+            this.nameProkatchik = nameProkatchik;
             this.dateDogovor = dateDogovor;
             this.dateProkat = dateProkat;
             this.week = week;
@@ -48,9 +48,9 @@ namespace Movie_DataBase
             loadData3();
 
             textBox1.Text = numberDogovor;
-            textBox2.Text = numberStaff;
-            textBox3.Text = numberFilm;
-            textBox4.Text = numberProkatchik;
+            textBox2.Text = nameStaff;
+            textBox3.Text = nameFilm;
+            textBox4.Text = nameProkatchik;
             textBox5.Text = dateDogovor;
             textBox6.Text = dateProkat;
             textBox7.Text = week;
@@ -59,11 +59,11 @@ namespace Movie_DataBase
 
         private void loadData1()
         {
-            SqlCommand myComm = new SqlCommand("select*from dbo.Фильм WHERE idФильм = @p1", myConn);
+            SqlCommand myComm = new SqlCommand("select*from dbo.Фильм WHERE Название = @p1", myConn);
 
             // Создать параметр и передать в него значение текстового поля 
             myComm.Parameters.Add("@p1", SqlDbType.NVarChar, 100);
-            myComm.Parameters["@p1"].Value = numberFilm;
+            myComm.Parameters["@p1"].Value = nameFilm;
             SqlDataReader myReader = myComm.ExecuteReader();
 
             // Заполняем данными
@@ -73,11 +73,11 @@ namespace Movie_DataBase
 
         private void loadData2()
         {
-            SqlCommand myComm = new SqlCommand("select*from dbo.Сотрудник WHERE idСотрудник = @p1", myConn);
+            SqlCommand myComm = new SqlCommand("select*from dbo.Сотрудник WHERE ФИО = @p1", myConn);
 
             // Создать параметр и передать в него значение текстового поля 
             myComm.Parameters.Add("@p1", SqlDbType.NVarChar, 100);
-            myComm.Parameters["@p1"].Value = numberStaff;
+            myComm.Parameters["@p1"].Value = nameStaff;
             SqlDataReader myReader = myComm.ExecuteReader();
 
             // Заполняем данными
@@ -87,11 +87,11 @@ namespace Movie_DataBase
 
         private void loadData3()
         {
-            SqlCommand myComm = new SqlCommand("select*from dbo.Прокатчик WHERE idПрокатчик = @p1", myConn);
+            SqlCommand myComm = new SqlCommand("select*from dbo.Прокатчик WHERE Название = @p1", myConn);
 
             // Создать параметр и передать в него значение текстового поля 
             myComm.Parameters.Add("@p1", SqlDbType.NVarChar, 100);
-            myComm.Parameters["@p1"].Value = numberProkatchik;
+            myComm.Parameters["@p1"].Value = nameProkatchik;
             SqlDataReader myReader = myComm.ExecuteReader();
 
             // Заполняем данными
