@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -115,8 +114,8 @@ namespace Movie_DataBase
                 myComm.Parameters.Add("@p1", SqlDbType.NVarChar, 100);
                 myComm.Parameters["@p1"].Value = nameFilmMaker;
 
-                myComm.Parameters.Add("@p2", SqlDbType.NVarChar, 300);
-                myComm.Parameters["@p2"].Value = numberFilm;
+                myComm.Parameters.Add("@p2", SqlDbType.NVarChar, 100);
+                myComm.Parameters["@p2"].Value = nameFilm;
 
                 // Выполнить запрос на изменение без возвращения результата
                 myComm.ExecuteNonQuery();

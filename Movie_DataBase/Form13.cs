@@ -9,8 +9,7 @@ namespace Movie_DataBase
     {
         SqlConnection myConn = new SqlConnection();
         int indexSelectRow;
-        SqlCommand myComm = new SqlCommand("select*from Фильм_has_Жанр");
-        SqlDataAdapter sda = new SqlDataAdapter(); DataSet ds = new DataSet();
+        string currentNameFilm, currentNameFilmGenre;
 
         public Form13()
         {
@@ -24,27 +23,28 @@ namespace Movie_DataBase
 
             // Создаем подключение 
             myConn.ConnectionString = StrConn;
-            myConn.Open();
 
-            // Выборка создания и заполнения в DataSet таблицы с жанрами
-            myComm.Connection = myConn;
-            sda.SelectCommand = myComm;
-            sda.Fill(ds, "Фильм_has_Жанр");
-
-            // dataGridView1.Columns[0].ReadOnly = true; // не надо блокировать id
-            dataGridView1.AutoGenerateColumns = false;
-            dataGridView1.DataSource = ds.Tables["Фильм_has_Жанр"];
-            dataGridView1.Refresh();
+            // Заполняем объект типа ComboBox
+            loadData1ComboBox();
+            loadData2ComboBox();
+            
+            // Запускаем процедуру выборки данных
+            loadData();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            indexSelectRow = e.RowIndex;
+            // Для того, чтобы не обновлялись значения, если нажатия происходит в одной строке
+            if (e.RowIndex != indexSelectRow)
+            {
+                indexSelectRow = e.RowIndex;
+                currentNameFilm = dataGridView1[0, indexSelectRow].Value.ToString();
+                currentNameFilmGenre = dataGridView1[1, indexSelectRow].Value.ToString();
+            }
         }
 
         private void Form10_FormClosing(object sender, FormClosingEventArgs e)
         {
-            myConn.Close();
             Application.Exit();
         }
 
@@ -52,38 +52,111 @@ namespace Movie_DataBase
 
         private void добавлениеToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            ds.Tables["Фильм_has_Жанр"].Rows.Add();
+            try
+            {
+                indexSelectRow = dataGridView1.Rows.Count - 2;
+                string nameFilm = dataGridView1[0, indexSelectRow].Value.ToString();
+                string nameFilmGenre = dataGridView1[1, indexSelectRow].Value.ToString();
+
+                myConn.Open();
+                if (nameFilm.Trim() == "" || nameFilmGenre.Trim() == "") throw new Exception();
+
+                // Создать команду для изменения
+                SqlCommand myComm = new SqlCommand("execute add_filmhasgenre @p1, @p2", myConn);
+
+                // Создать параметр и передать в него значение текстового поля 
+                myComm.Parameters.Add("@p1", SqlDbType.NVarChar, 100);
+                myComm.Parameters["@p1"].Value = nameFilm;
+
+                myComm.Parameters.Add("@p2", SqlDbType.NVarChar, 300);
+                myComm.Parameters["@p2"].Value = nameFilmGenre;
+
+                // Выполнить запрос на изменение без возвращения результата
+                myComm.ExecuteNonQuery();
+                myConn.Close();
+
+                // Обновляем содержимое 
+                loadData();
+            }
+            catch { myConn.Close();
+                MessageBox.Show("Ошибка. Возможное решение:\n\n " +
+                                "1. Возможно вы пытаетесь добавить пустую строку.", "Внимание!");
+            }
         }
 
         private void удалениеToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             try
             {
-                DialogResult result = MessageBox.Show("Будет удалена вся информация о связи. Продолжить?", "Внимание!", MessageBoxButtons.YesNo);
+                DialogResult result = MessageBox.Show("Информация будет удалена. Продолжить?", "Внимание!", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
-                    int rowIndex = dataGridView1.CurrentCell.RowIndex;
-                    dataGridView1.Rows.RemoveAt(rowIndex);
+                    myConn.Open();
+                    if (currentNameFilm == "" || currentNameFilmGenre == "") throw new Exception();
+
+                    // Создать команду для удаления
+                    SqlCommand myComm = new SqlCommand("execute del_filmhasgenre @p1, @p2", myConn);
+
+                    // Создать параметр и передать в него значение текстового поля 
+                    myComm.Parameters.Add("@p1", SqlDbType.NVarChar, 100);
+                    myComm.Parameters["@p1"].Value = currentNameFilm;
+                    myComm.Parameters.Add("@p2", SqlDbType.NVarChar, 100);
+                    myComm.Parameters["@p2"].Value = currentNameFilmGenre;
+
+                    // Выполнить запрос на удаление без возвращения результата
+                    myComm.ExecuteReader();
+                    myConn.Close();
+
+                    // Обновляем содержимое 
+                    loadData();
                 }
             }
-            catch { MessageBox.Show("Почему-то вызвалось исключение", "Внимание!"); }
+            catch
+            {
+                myConn.Close();
+                MessageBox.Show("Ошибка. Возможное решение:\n\n " +
+                                "1. Возможно вы пытаетесь удалить пустую строку.", "Внимание!");
+            }
         }
 
         private void сохранениеToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             try
             {
-                // Создаем команды манипулирования данными
-                SqlCommandBuilder scb = new SqlCommandBuilder(sda);
-                scb.GetUpdateCommand(); scb.GetDeleteCommand(); scb.GetInsertCommand();
+                string nameFilm = dataGridView1[0, indexSelectRow].Value.ToString();
+                string NameFilmGenre = dataGridView1[1, indexSelectRow].Value.ToString();
 
-                // Отправляем изменения в БД
-                sda.Update(ds.Tables["Фильм_has_Жанр"]);
+                myConn.Open();
+                if (nameFilm.Trim() == "" || NameFilmGenre.Trim() == "") throw new Exception();
+
+                // Создать команду для изменения
+                SqlCommand myComm = new SqlCommand("EXECUTE [dbo].[update_filmhasgenre] @p1, @p2, @p3, @p4", myConn);
+
+                // Создать параметр и передать в него значение текстового поля 
+                myComm.Parameters.Add("@p1", SqlDbType.NVarChar, 100);
+                myComm.Parameters["@p1"].Value = currentNameFilm;
+
+                myComm.Parameters.Add("@p2", SqlDbType.NVarChar, 100);
+                myComm.Parameters["@p2"].Value = currentNameFilmGenre;
+
+                myComm.Parameters.Add("@p3", SqlDbType.NVarChar, 100);
+                myComm.Parameters["@p3"].Value = nameFilm;
+
+                myComm.Parameters.Add("@p4", SqlDbType.NVarChar, 100);
+                myComm.Parameters["@p4"].Value = NameFilmGenre;
+
+                // Выполнить запрос на изменение без возвращения результата
+                myComm.ExecuteNonQuery();
+                myConn.Close();
+
+                // Обновляем содержимое 
+                loadData();
             }
-            catch { 
+            catch
+            {
+                myConn.Close();
                 MessageBox.Show("Ошибка. Возможное решение:\n\n " +
-                "1. Необходимо заполнить добавленную строку.\n\n " +
-                "2. Необходимо ввести корректный номер фильма и/или жанра.", "Внимание!"); 
+                                "1. Возможно вы пытаетесь редактировать пустую строку.", "Внимание!");
             }
         }
 
@@ -97,12 +170,60 @@ namespace Movie_DataBase
 
         private void информацияToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DataGridViewRow SelectedRow = dataGridView1.Rows[indexSelectRow];
-            string numberGenre = SelectedRow.Cells[0].Value.ToString();
-            string numberFilm = SelectedRow.Cells[1].Value.ToString();
+            try {
+                DataGridViewRow SelectedRow = dataGridView1.Rows[indexSelectRow];
+                string nameGenre = SelectedRow.Cells[0].Value.ToString();
+                string nameFilm = SelectedRow.Cells[1].Value.ToString();
+                if (nameFilm.Trim() == "" || nameGenre.Trim() == "") throw new Exception();
 
-            Form14 form14 = new Form14(numberFilm, numberGenre);
-            form14.ShowDialog();
+                Form14 form14 = new Form14(nameGenre, nameFilm);
+                form14.ShowDialog();
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка. Возможное решение:\n\n " +
+                                "1. Возможно вы пытаетесь посмотреть информацию о пустой строке.", "Внимание!");
+            }
+        }
+
+        private void loadData1ComboBox()
+        {
+            myConn.Open();
+
+            SqlDataAdapter sqlDa = new SqlDataAdapter("select Название from Фильм", myConn);
+            DataTable dtbl = new DataTable();
+            sqlDa.Fill(dtbl);
+            film_name.DisplayMember = "Название";
+            film_name.DataSource = dtbl;
+
+            myConn.Close();
+        }
+        private void loadData2ComboBox()
+        {
+            myConn.Open();
+
+            SqlDataAdapter sqlDa = new SqlDataAdapter("select Жанр from Жанр", myConn);
+            DataTable dtbl = new DataTable();
+            sqlDa.Fill(dtbl);
+            film_genre.DisplayMember = "Жанр";
+            film_genre.DataSource = dtbl;
+
+            myConn.Close();
+        }
+
+        private void loadData()
+        {
+            myConn.Open();
+            SqlCommand myComm = new SqlCommand("select Название, Жанр from dbo.View_FilmGenre", myConn);
+
+            SqlDataReader myReader = myComm.ExecuteReader();
+            DataTable dtbl = new DataTable(); dtbl.Load(myReader);
+            dataGridView1.DataSource = dtbl;
+            myConn.Close();
+
+            indexSelectRow = 0;
+            currentNameFilmGenre = dataGridView1[0, indexSelectRow].Value.ToString();
+            currentNameFilm = dataGridView1[1, indexSelectRow].Value.ToString();
         }
     }
 }

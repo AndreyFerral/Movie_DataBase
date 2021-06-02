@@ -8,13 +8,13 @@ namespace Movie_DataBase
     public partial class Form14 : Form
     {
         SqlConnection myConn = new SqlConnection();
-        string nameFilm, nameGenre, numberFilm, numberGenre;
+        string nameFilm, nameGenre;
 
-        public Form14(string numberFilm, string numberGenre)
+        public Form14(string nameFilm, string nameGenre)
         {
             InitializeComponent();
-            this.numberFilm = numberFilm;
-            this.numberGenre = numberGenre;
+            this.nameFilm = nameFilm;
+            this.nameGenre = nameGenre;
         }
 
         private void Form14_Load(object sender, EventArgs e)
@@ -30,18 +30,18 @@ namespace Movie_DataBase
             loadData1();
             loadData2();
 
-            textBox1.Text = numberFilm;
-            textBox2.Text = numberGenre;
+            textBox1.Text = nameFilm;
+            textBox2.Text = nameGenre;
         }
 
         private void loadData1()
         {
-            // Создать команду для удаления
-            SqlCommand myComm = new SqlCommand("select*from dbo.Фильм where idФильм = @p1", myConn);
+            // Создать команду для выборки
+            SqlCommand myComm = new SqlCommand("select*from dbo.Фильм where Название = @p1", myConn);
 
             // Создать параметр и передать в него значение текстового поля 
-            myComm.Parameters.Add("@p1", SqlDbType.NVarChar, 10);
-            myComm.Parameters["@p1"].Value = numberFilm;
+            myComm.Parameters.Add("@p1", SqlDbType.NVarChar, 100);
+            myComm.Parameters["@p1"].Value = nameFilm;
             SqlDataReader myReader = myComm.ExecuteReader();
 
             // Заполняем данными
@@ -51,12 +51,12 @@ namespace Movie_DataBase
 
         private void loadData2()
         {
-            // Создать команду для удаления
-            SqlCommand myComm = new SqlCommand("select*from dbo.Жанр where idЖанр = @p1", myConn);
+            // Создать команду для выборки
+            SqlCommand myComm = new SqlCommand("select*from dbo.Жанр where Жанр = @p1", myConn);
 
             // Создать параметр и передать в него значение текстового поля 
-            myComm.Parameters.Add("@p1", SqlDbType.NVarChar, 10);
-            myComm.Parameters["@p1"].Value = numberGenre;
+            myComm.Parameters.Add("@p1", SqlDbType.NVarChar, 100);
+            myComm.Parameters["@p1"].Value = nameGenre;
             SqlDataReader myReader = myComm.ExecuteReader();
 
             // Заполняем данными

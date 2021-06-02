@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Movie_DataBase
@@ -14,12 +8,11 @@ namespace Movie_DataBase
     public partial class Form11 : Form
     {
         SqlConnection myConn = new SqlConnection();
-        string numberFilm, nameFilmMaker;
+        string nameFilmMaker;
 
-        public Form11(string numberFilm, string nameFilmMaker)
+        public Form11(string nameFilmMaker)
         {
             InitializeComponent();
-            this.numberFilm = numberFilm;
             this.nameFilmMaker = nameFilmMaker;
         }
 

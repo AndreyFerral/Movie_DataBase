@@ -53,7 +53,7 @@ namespace Movie_DataBase
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(184, 25);
+            this.textBox2.Location = new System.Drawing.Point(157, 56);
             this.textBox2.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
@@ -64,7 +64,7 @@ namespace Movie_DataBase
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label2.Location = new System.Drawing.Point(49, 31);
+            this.label2.Location = new System.Drawing.Point(36, 59);
             this.label2.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 20);
@@ -73,7 +73,7 @@ namespace Movie_DataBase
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(184, 64);
+            this.textBox1.Location = new System.Drawing.Point(157, 17);
             this.textBox1.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
@@ -84,7 +84,7 @@ namespace Movie_DataBase
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label1.Location = new System.Drawing.Point(49, 70);
+            this.label1.Location = new System.Drawing.Point(36, 20);
             this.label1.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 20);
@@ -98,7 +98,7 @@ namespace Movie_DataBase
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(823, 263);
+            this.tabPage2.Size = new System.Drawing.Size(823, 106);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Фильм";
             // 
@@ -117,40 +117,43 @@ namespace Movie_DataBase
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(817, 257);
+            this.dataGridView1.Size = new System.Drawing.Size(817, 100);
             this.dataGridView1.TabIndex = 24;
             // 
             // idФильм
             // 
+            this.idФильм.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.idФильм.DataPropertyName = "idФильм";
             this.idФильм.HeaderText = "Номер фильма";
             this.idФильм.Name = "idФильм";
             this.idФильм.ReadOnly = true;
-            this.idФильм.Width = 80;
+            this.idФильм.Width = 138;
             // 
             // Название
             // 
+            this.Название.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Название.DataPropertyName = "Название";
             this.Название.HeaderText = "Название фильма";
             this.Название.Name = "Название";
             this.Название.ReadOnly = true;
-            this.Название.Width = 250;
+            this.Название.Width = 159;
             // 
             // Описание
             // 
+            this.Описание.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Описание.DataPropertyName = "Описание";
             this.Описание.HeaderText = "Описание";
             this.Описание.Name = "Описание";
             this.Описание.ReadOnly = true;
-            this.Описание.Width = 300;
             // 
             // Длительность
             // 
+            this.Длительность.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Длительность.DataPropertyName = "Длительность";
             this.Длительность.HeaderText = "Длительность";
             this.Длительность.Name = "Длительность";
             this.Длительность.ReadOnly = true;
-            this.Длительность.Width = 130;
+            this.Длительность.Width = 146;
             // 
             // tabPage1
             // 
@@ -159,7 +162,7 @@ namespace Movie_DataBase
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(823, 263);
+            this.tabPage1.Size = new System.Drawing.Size(823, 106);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Жанр";
             // 
@@ -174,7 +177,7 @@ namespace Movie_DataBase
             this.dataGridView2.Location = new System.Drawing.Point(3, 3);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(379, 257);
+            this.dataGridView2.Size = new System.Drawing.Size(379, 100);
             this.dataGridView2.TabIndex = 25;
             // 
             // idGenre
@@ -198,17 +201,17 @@ namespace Movie_DataBase
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tabControl1.Location = new System.Drawing.Point(0, 110);
+            this.tabControl1.Location = new System.Drawing.Point(0, 101);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(831, 296);
+            this.tabControl1.Size = new System.Drawing.Size(831, 139);
             this.tabControl1.TabIndex = 23;
             // 
             // Form14
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(831, 406);
+            this.ClientSize = new System.Drawing.Size(831, 240);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
@@ -241,11 +244,11 @@ namespace Movie_DataBase
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idGenre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idNameGenre;
         private System.Windows.Forms.DataGridViewTextBoxColumn idФильм;
         private System.Windows.Forms.DataGridViewTextBoxColumn Название;
         private System.Windows.Forms.DataGridViewTextBoxColumn Описание;
         private System.Windows.Forms.DataGridViewTextBoxColumn Длительность;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idGenre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idNameGenre;
     }
 }
