@@ -89,7 +89,7 @@ namespace Movie_DataBase
             // dateTimePicker5
             // 
             this.dateTimePicker5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.dateTimePicker5.Location = new System.Drawing.Point(153, 178);
+            this.dateTimePicker5.Location = new System.Drawing.Point(153, 179);
             this.dateTimePicker5.Name = "dateTimePicker5";
             this.dateTimePicker5.Size = new System.Drawing.Size(224, 26);
             this.dateTimePicker5.TabIndex = 63;
@@ -98,7 +98,7 @@ namespace Movie_DataBase
             // 
             this.dateTimePicker4.CustomFormat = "dd.MM.yyyy HH:mm:ss";
             this.dateTimePicker4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.dateTimePicker4.Location = new System.Drawing.Point(153, 140);
+            this.dateTimePicker4.Location = new System.Drawing.Point(153, 141);
             this.dateTimePicker4.Name = "dateTimePicker4";
             this.dateTimePicker4.Size = new System.Drawing.Size(224, 26);
             this.dateTimePicker4.TabIndex = 62;
@@ -107,7 +107,7 @@ namespace Movie_DataBase
             // 
             this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(153, 100);
+            this.comboBox3.Location = new System.Drawing.Point(153, 105);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(224, 28);
             this.comboBox3.TabIndex = 61;
@@ -116,7 +116,7 @@ namespace Movie_DataBase
             // 
             this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(153, 62);
+            this.comboBox2.Location = new System.Drawing.Point(153, 67);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(224, 28);
             this.comboBox2.TabIndex = 60;
@@ -125,7 +125,7 @@ namespace Movie_DataBase
             // 
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(153, 24);
+            this.comboBox1.Location = new System.Drawing.Point(153, 29);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(224, 28);
             this.comboBox1.TabIndex = 1;
@@ -133,7 +133,7 @@ namespace Movie_DataBase
             // textBox6
             // 
             this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBox6.Location = new System.Drawing.Point(153, 216);
+            this.textBox6.Location = new System.Drawing.Point(153, 219);
             this.textBox6.Margin = new System.Windows.Forms.Padding(7, 10, 7, 10);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(224, 26);
@@ -164,7 +164,7 @@ namespace Movie_DataBase
             // textBox7
             // 
             this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBox7.Location = new System.Drawing.Point(153, 251);
+            this.textBox7.Location = new System.Drawing.Point(153, 254);
             this.textBox7.Margin = new System.Windows.Forms.Padding(7, 10, 7, 10);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(224, 26);
@@ -236,7 +236,7 @@ namespace Movie_DataBase
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox2.Size = new System.Drawing.Size(400, 128);
+            this.groupBox2.Size = new System.Drawing.Size(400, 113);
             this.groupBox2.TabIndex = 62;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Данные нового сотрудника";
@@ -256,7 +256,7 @@ namespace Movie_DataBase
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label9.Location = new System.Drawing.Point(17, 35);
+            this.label9.Location = new System.Drawing.Point(17, 32);
             this.label9.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(95, 20);
@@ -266,7 +266,7 @@ namespace Movie_DataBase
             // textBox9
             // 
             this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBox9.Location = new System.Drawing.Point(153, 64);
+            this.textBox9.Location = new System.Drawing.Point(153, 67);
             this.textBox9.Margin = new System.Windows.Forms.Padding(7, 10, 7, 10);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(224, 26);
@@ -292,7 +292,7 @@ namespace Movie_DataBase
             // textBox10
             // 
             this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBox10.Location = new System.Drawing.Point(153, 35);
+            this.textBox10.Location = new System.Drawing.Point(153, 33);
             this.textBox10.Margin = new System.Windows.Forms.Padding(7, 10, 7, 10);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(224, 26);
@@ -302,7 +302,7 @@ namespace Movie_DataBase
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label10.Location = new System.Drawing.Point(17, 76);
+            this.label10.Location = new System.Drawing.Point(17, 73);
             this.label10.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(121, 20);
@@ -323,7 +323,7 @@ namespace Movie_DataBase
             // textBox11
             // 
             this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBox11.Location = new System.Drawing.Point(153, 73);
+            this.textBox11.Location = new System.Drawing.Point(153, 70);
             this.textBox11.Margin = new System.Windows.Forms.Padding(7, 10, 7, 10);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(224, 26);
@@ -343,7 +343,7 @@ namespace Movie_DataBase
             // 
             this.comboBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Location = new System.Drawing.Point(153, 27);
+            this.comboBox8.Location = new System.Drawing.Point(153, 29);
             this.comboBox8.Name = "comboBox8";
             this.comboBox8.Size = new System.Drawing.Size(224, 28);
             this.comboBox8.TabIndex = 64;

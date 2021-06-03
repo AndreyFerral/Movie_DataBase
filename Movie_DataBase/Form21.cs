@@ -207,6 +207,18 @@ namespace Movie_DataBase
             }
         }
 
+        private void добавлениеToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Form24 form24 = new Form24();
+            form24.ShowDialog();
+
+            // Перезапускаем форму для обновления данных
+            this.Hide();
+            Form21 form21 = new Form21();
+            form21.ShowDialog();
+            this.Close();
+        }
+
         private void информацияToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try

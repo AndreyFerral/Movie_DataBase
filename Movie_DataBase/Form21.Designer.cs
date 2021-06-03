@@ -42,6 +42,7 @@ namespace Movie_DataBase
             this.staff_name = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.datetime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.добавлениеToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -50,6 +51,7 @@ namespace Movie_DataBase
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.добавлениеToolStripMenuItem,
+            this.добавлениеToolStripMenuItem1,
             this.удалениеToolStripMenuItem,
             this.сохранениеToolStripMenuItem,
             this.информацияToolStripMenuItem,
@@ -168,6 +170,13 @@ namespace Movie_DataBase
             this.cost.HeaderText = "Стоимость";
             this.cost.Name = "cost";
             // 
+            // добавлениеToolStripMenuItem1
+            // 
+            this.добавлениеToolStripMenuItem1.Name = "добавлениеToolStripMenuItem1";
+            this.добавлениеToolStripMenuItem1.Size = new System.Drawing.Size(94, 20);
+            this.добавлениеToolStripMenuItem1.Text = "Добавление+";
+            this.добавлениеToolStripMenuItem1.Click += new System.EventHandler(this.добавлениеToolStripMenuItem1_Click);
+            // 
             // Form21
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -203,5 +212,6 @@ namespace Movie_DataBase
         private System.Windows.Forms.DataGridViewComboBoxColumn staff_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn datetime;
         private System.Windows.Forms.DataGridViewTextBoxColumn cost;
+        private System.Windows.Forms.ToolStripMenuItem добавлениеToolStripMenuItem1;
     }
 }

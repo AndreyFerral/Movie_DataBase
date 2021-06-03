@@ -90,7 +90,9 @@ namespace Movie_DataBase
                     nameDistrib.Trim() == "" || cost.Trim() == "") throw new Exception();
 
                 // Создать команду для изменения
-                SqlCommand myComm = new SqlCommand("execute add_prokat_distrib_film_staff @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11", myConn);
+                SqlCommand myComm = new SqlCommand(
+                    "execute add_prokat_distrib_film_staff " +
+                    "@p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11", myConn);
 
                 // Создать параметр и передать в него значение текстового поля 
                 myComm.Parameters.Add("@p1", SqlDbType.Date);
