@@ -56,7 +56,7 @@ namespace Movie_DataBase
             this.назадToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1084, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(784, 24);
             this.menuStrip1.TabIndex = 17;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -110,7 +110,7 @@ namespace Movie_DataBase
             this.dataGridView1.Location = new System.Drawing.Point(0, 24);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1084, 437);
+            this.dataGridView1.Size = new System.Drawing.Size(784, 437);
             this.dataGridView1.TabIndex = 23;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -121,11 +121,12 @@ namespace Movie_DataBase
             this.id_timing.DataPropertyName = "idРасписание";
             this.id_timing.HeaderText = "Номер расписания";
             this.id_timing.Name = "id_timing";
+            this.id_timing.ReadOnly = true;
             // 
             // dogovor_number
             // 
             this.dogovor_number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dogovor_number.DataPropertyName = "Номер_договора";
+            this.dogovor_number.DataPropertyName = "Прокат_фильма_Номер_договора";
             this.dogovor_number.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.dogovor_number.HeaderText = "Номер проката";
             this.dogovor_number.Name = "dogovor_number";
@@ -158,7 +159,7 @@ namespace Movie_DataBase
             this.datetime.DataPropertyName = "Дата_время";
             this.datetime.HeaderText = "Дата и время";
             this.datetime.Name = "datetime";
-            this.datetime.Width = 125;
+            this.datetime.Width = 137;
             // 
             // cost
             // 
@@ -171,7 +172,7 @@ namespace Movie_DataBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1084, 461);
+            this.ClientSize = new System.Drawing.Size(784, 461);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);

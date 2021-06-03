@@ -44,6 +44,7 @@ namespace Movie_DataBase
             this.date2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.week1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cost1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.добавлениеToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -73,6 +74,7 @@ namespace Movie_DataBase
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.добавлениеToolStripMenuItem,
+            this.добавлениеToolStripMenuItem1,
             this.удалениеToolStripMenuItem,
             this.сохранениеToolStripMenuItem,
             this.информацияToolStripMenuItem,
@@ -124,6 +126,7 @@ namespace Movie_DataBase
             this.n_dogovor1.DataPropertyName = "Номер_договора";
             this.n_dogovor1.HeaderText = "Номер договора";
             this.n_dogovor1.Name = "n_dogovor1";
+            this.n_dogovor1.ReadOnly = true;
             // 
             // staff_name
             // 
@@ -187,6 +190,13 @@ namespace Movie_DataBase
             this.cost1.Name = "cost1";
             this.cost1.Width = 118;
             // 
+            // добавлениеToolStripMenuItem1
+            // 
+            this.добавлениеToolStripMenuItem1.Name = "добавлениеToolStripMenuItem1";
+            this.добавлениеToolStripMenuItem1.Size = new System.Drawing.Size(94, 20);
+            this.добавлениеToolStripMenuItem1.Text = "Добавление+";
+            this.добавлениеToolStripMenuItem1.Click += new System.EventHandler(this.добавлениеToolStripMenuItem1_Click);
+            // 
             // Form19
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -225,5 +235,6 @@ namespace Movie_DataBase
         private System.Windows.Forms.DataGridViewTextBoxColumn date2;
         private System.Windows.Forms.DataGridViewTextBoxColumn week1;
         private System.Windows.Forms.DataGridViewTextBoxColumn cost1;
+        private System.Windows.Forms.ToolStripMenuItem добавлениеToolStripMenuItem1;
     }
 }

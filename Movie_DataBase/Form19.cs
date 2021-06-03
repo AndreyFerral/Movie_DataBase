@@ -12,7 +12,6 @@ namespace Movie_DataBase
         string curNumberDogovor, curNameStaff, curNameFilm, curNameDistrib, 
             curDateDogovor, curDateProkat, curWeek, curCost;
 
-
         public Form19()
         {
             InitializeComponent();
@@ -60,10 +59,11 @@ namespace Movie_DataBase
 
         private void добавлениеToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // Можно добавить бросание исключений на количество недель и даты
+
             try
             {
                 indexSelectRow = dataGridView1.Rows.Count - 2;
-                string NumberDogovor = dataGridView1[0, indexSelectRow].Value.ToString();
                 string NameStaff = dataGridView1[1, indexSelectRow].Value.ToString();
                 string NameFilm = dataGridView1[2, indexSelectRow].Value.ToString();
                 string NameDistrib = dataGridView1[3, indexSelectRow].Value.ToString();
@@ -73,19 +73,19 @@ namespace Movie_DataBase
                 string Cost = dataGridView1[7, indexSelectRow].Value.ToString();
 
                 myConn.Open();
-                if (NumberDogovor.Trim() == "" || NameStaff.Trim() == "" ||
-                    NameFilm.Trim() == "" || NameDistrib.Trim() == "" ||
-                    //DateDogovor.Trim() == "" || DateProkat.Trim() == "" || Week.Trim() == "" || 
-                    Cost.Trim() == "") throw new Exception();
+
+                // Остальные поля могут иметь значение NULL
+                if (NameStaff.Trim() == "" || NameFilm.Trim() == "" || 
+                    NameDistrib.Trim() == "" || Cost.Trim() == "") throw new Exception();
 
                 // Создать команду для изменения
-                SqlCommand myComm = new SqlCommand("add_prokat_distrib_film_staff @p1, @p2, @p3, @p4, @p5, @p6, @p7", myConn);
+                SqlCommand myComm = new SqlCommand("execute add_prokat_distrib_film_staff @p1, @p2, @p3, @p4, @p5, @p6, @p7", myConn);
 
                 // Создать параметр и передать в него значение текстового поля 
-                myComm.Parameters.Add("@p1", SqlDbType.NVarChar, 100);
+                myComm.Parameters.Add("@p1", SqlDbType.Date);
                 myComm.Parameters["@p1"].Value = DateDogovor;
 
-                myComm.Parameters.Add("@p2", SqlDbType.NVarChar, 100);
+                myComm.Parameters.Add("@p2", SqlDbType.Date);
                 myComm.Parameters["@p2"].Value = DateProkat;
 
                 myComm.Parameters.Add("@p3", SqlDbType.NVarChar, 100);
@@ -110,9 +110,7 @@ namespace Movie_DataBase
                 // Обновляем содержимое 
                 loadData();
             }
-            catch
-            {
-                myConn.Close();
+            catch { myConn.Close();
                 MessageBox.Show("Ошибка. Возможное решение:\n\n " +
                                 "1. Возможно вы пытаетесь добавить пустую строку.", "Внимание!");
             }
@@ -149,6 +147,18 @@ namespace Movie_DataBase
                 MessageBox.Show("Ошибка. Возможное решение:\n\n " +
                                 "1. Возможно вы пытаетесь удалить пустую строку.", "Внимание!");
             }
+        }
+
+        private void добавлениеToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Form23 form23 = new Form23();
+            form23.ShowDialog();
+
+            // Перезапускаем форму для обновления данных
+            this.Hide();
+            Form19 form19 = new Form19();
+            form19.ShowDialog();
+            this.Close();
         }
 
         private void информацияToolStripMenuItem_Click(object sender, EventArgs e)
@@ -193,16 +203,16 @@ namespace Movie_DataBase
                     Cost.Trim() == "") throw new Exception();
 
                 // Создать команду для изменения
-                SqlCommand myComm = new SqlCommand("update_prokat @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8", myConn);
+                SqlCommand myComm = new SqlCommand("execute update_prokat @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8", myConn);
 
                 // Создать параметр и передать в него значение текстового поля 
                 myComm.Parameters.Add("@p1", SqlDbType.NVarChar, 100);
                 myComm.Parameters["@p1"].Value = NumberDogovor;
 
-                myComm.Parameters.Add("@p2", SqlDbType.NVarChar, 100);
+                myComm.Parameters.Add("@p2", SqlDbType.Date);
                 myComm.Parameters["@p2"].Value = DateDogovor;
 
-                myComm.Parameters.Add("@p3", SqlDbType.NVarChar, 100);
+                myComm.Parameters.Add("@p3", SqlDbType.Date);
                 myComm.Parameters["@p3"].Value = DateProkat;
 
                 myComm.Parameters.Add("@p4", SqlDbType.NVarChar, 100);
@@ -228,8 +238,10 @@ namespace Movie_DataBase
                 loadData();
             }
             catch { myConn.Close();
-                MessageBox.Show("Ошибка. Возможное решение:\n\n " +
-                                "1. Возможно вы пытаетесь редактировать пустую строку.", "Внимание!");
+                MessageBox.Show("Ошибка. Возможное решение:\n\n" +
+                                " 1. Возможно вы пытаетесь редактировать пустую строку.\n\n" +
+                                " 2. Возможно вы установили количество недель не в диапазоне 1-2.\n\n" +
+                                " 3. Возможно вы установили дату проката меньше даты договора.", "Внимание!");
             }
         }
 
@@ -286,6 +298,17 @@ namespace Movie_DataBase
 
             SqlDataReader myReader = myComm.ExecuteReader();
             DataTable dtbl = new DataTable(); dtbl.Load(myReader);
+
+            // Разрешаем нулевые значений каждому элементу (иначе событие DataError)
+            dtbl.Columns[0].AllowDBNull = true;
+            dtbl.Columns[1].AllowDBNull = true;
+            dtbl.Columns[2].AllowDBNull = true;
+            dtbl.Columns[3].AllowDBNull = true;
+            dtbl.Columns[4].AllowDBNull = true;
+            dtbl.Columns[5].AllowDBNull = true;
+            dtbl.Columns[6].AllowDBNull = true;
+            dtbl.Columns[7].AllowDBNull = true;
+
             dataGridView1.DataSource = dtbl;
             myConn.Close();
 

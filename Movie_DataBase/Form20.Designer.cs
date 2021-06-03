@@ -77,7 +77,7 @@ namespace Movie_DataBase
             this.textBox2.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(296, 26);
+            this.textBox2.Size = new System.Drawing.Size(200, 26);
             this.textBox2.TabIndex = 33;
             // 
             // label3
@@ -97,7 +97,7 @@ namespace Movie_DataBase
             this.textBox1.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(296, 26);
+            this.textBox1.Size = new System.Drawing.Size(200, 26);
             this.textBox1.TabIndex = 31;
             // 
             // label1
@@ -117,7 +117,7 @@ namespace Movie_DataBase
             this.textBox3.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(296, 26);
+            this.textBox3.Size = new System.Drawing.Size(200, 26);
             this.textBox3.TabIndex = 28;
             // 
             // label2
@@ -137,14 +137,14 @@ namespace Movie_DataBase
             this.textBox4.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.textBox4.Name = "textBox4";
             this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(296, 26);
+            this.textBox4.Size = new System.Drawing.Size(200, 26);
             this.textBox4.TabIndex = 39;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label4.Location = new System.Drawing.Point(24, 201);
+            this.label4.Location = new System.Drawing.Point(433, 57);
             this.label4.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(114, 20);
@@ -153,18 +153,18 @@ namespace Movie_DataBase
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(180, 159);
+            this.textBox5.Location = new System.Drawing.Point(589, 18);
             this.textBox5.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.textBox5.Name = "textBox5";
             this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(296, 26);
+            this.textBox5.Size = new System.Drawing.Size(200, 26);
             this.textBox5.TabIndex = 37;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label5.Location = new System.Drawing.Point(24, 165);
+            this.label5.Location = new System.Drawing.Point(433, 21);
             this.label5.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(124, 20);
@@ -173,11 +173,11 @@ namespace Movie_DataBase
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(180, 195);
+            this.textBox6.Location = new System.Drawing.Point(589, 51);
             this.textBox6.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.textBox6.Name = "textBox6";
             this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(296, 26);
+            this.textBox6.Size = new System.Drawing.Size(200, 26);
             this.textBox6.TabIndex = 35;
             // 
             // label6
@@ -193,18 +193,18 @@ namespace Movie_DataBase
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(180, 231);
+            this.textBox7.Location = new System.Drawing.Point(589, 87);
             this.textBox7.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.textBox7.Name = "textBox7";
             this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(296, 26);
+            this.textBox7.Size = new System.Drawing.Size(200, 26);
             this.textBox7.TabIndex = 43;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label7.Location = new System.Drawing.Point(24, 273);
+            this.label7.Location = new System.Drawing.Point(433, 129);
             this.label7.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(93, 20);
@@ -215,7 +215,7 @@ namespace Movie_DataBase
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label8.Location = new System.Drawing.Point(24, 237);
+            this.label8.Location = new System.Drawing.Point(433, 93);
             this.label8.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(122, 20);
@@ -224,11 +224,11 @@ namespace Movie_DataBase
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(180, 267);
+            this.textBox8.Location = new System.Drawing.Point(589, 123);
             this.textBox8.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.textBox8.Name = "textBox8";
             this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(296, 26);
+            this.textBox8.Size = new System.Drawing.Size(200, 26);
             this.textBox8.TabIndex = 40;
             // 
             // tabControl1
@@ -237,7 +237,7 @@ namespace Movie_DataBase
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tabControl1.Location = new System.Drawing.Point(0, 304);
+            this.tabControl1.Location = new System.Drawing.Point(0, 169);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(822, 129);
@@ -410,7 +410,7 @@ namespace Movie_DataBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(822, 433);
+            this.ClientSize = new System.Drawing.Size(822, 298);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.label7);

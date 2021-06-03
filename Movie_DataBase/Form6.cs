@@ -9,7 +9,6 @@ namespace Movie_DataBase
     {
         SqlConnection myConn = new SqlConnection();
         string numberFilm, nameFilm, description, howmuch;
-        // SqlDataReader myReader = null;
 
         int indexDelUp1, indexInsert1; // Режиссер
         int indexDelUp2, indexInsert2; // Жанр
@@ -45,10 +44,7 @@ namespace Movie_DataBase
             text2.Text = nameFilm;
             text3.Text = description;
             text4.Text = howmuch;
-
         }
-
-
 
         // получаем индекс нажатой ячейки
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -70,28 +66,26 @@ namespace Movie_DataBase
 
                 // Создать команду для изменения
                 myConn.Open();
-                SqlCommand myComm = new SqlCommand("UPDATE dbo.Фильм SET Название = @p1, Описание = @p2, Длительность = @p3 where idФильм = @p4", myConn);
+                SqlCommand myComm = new SqlCommand("EXECUTE [update_film] @p1, @p2, @p3, @p4", myConn);
 
                 // Создать параметр и передать в него значение текстового поля 
-                myComm.Parameters.Add("@p1", SqlDbType.NVarChar, 100);
-                myComm.Parameters["@p1"].Value = text2.Text;
+                myComm.Parameters.Add("@p1", SqlDbType.NVarChar, 10);
+                myComm.Parameters["@p1"].Value = numberFilm;
 
-                myComm.Parameters.Add("@p2", SqlDbType.NVarChar, 300);
-                myComm.Parameters["@p2"].Value = text3.Text;
+                myComm.Parameters.Add("@p2", SqlDbType.NVarChar, 100);
+                myComm.Parameters["@p2"].Value = text2.Text;
 
-                myComm.Parameters.Add("@p3", SqlDbType.Int);
-                myComm.Parameters["@p3"].Value = text4.Text;
+                myComm.Parameters.Add("@p3", SqlDbType.NVarChar, 300);
+                myComm.Parameters["@p3"].Value = text3.Text;
 
-                myComm.Parameters.Add("@p4", SqlDbType.NVarChar, 10);
-                myComm.Parameters["@p4"].Value = numberFilm;
-
-                if (Int32.Parse(text4.Text) < 15 || Int32.Parse(text4.Text) > 240) { myConn.Close(); }
+                myComm.Parameters.Add("@p4", SqlDbType.Int);
+                myComm.Parameters["@p4"].Value = text4.Text;
                 
                 // Выполнить запрос на изменение без возвращения результата
                 myComm.ExecuteNonQuery();
                 myConn.Close();            
             }
-            catch {
+            catch { myConn.Close();
                 MessageBox.Show("Ошибка. Возможное решение:\n\n " +
                                 "1. Необходимо заполнить добавленную строку.\n\n " +
                                 "2. Длительность фильма должна быть от 15 до 240 минут.", "Внимание!");
