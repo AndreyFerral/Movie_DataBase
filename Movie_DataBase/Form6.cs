@@ -135,13 +135,13 @@ namespace Movie_DataBase
 
                     // Создать команду для удаления
                     myConn.Open();
-                    SqlCommand myComm = new SqlCommand("delete from dbo.Режиссер where Фильм_idФильм = @p1 and Режиссер.Режиссер = @p2", myConn);
+                    SqlCommand myComm = new SqlCommand("EXECUTE [dbo].[delete_filmmaker] @p1, @p2", myConn);
 
                     // Создать параметр и передать в него значение текстового поля 
-                    myComm.Parameters.Add("@p1", SqlDbType.NVarChar, 10);
-                    myComm.Parameters["@p1"].Value = numberFilm;
+                    myComm.Parameters.Add("@p1", SqlDbType.NVarChar, 100);
+                    myComm.Parameters["@p1"].Value = nameFilmMaker;
                     myComm.Parameters.Add("@p2", SqlDbType.NVarChar, 100);
-                    myComm.Parameters["@p2"].Value = nameFilmMaker;
+                    myComm.Parameters["@p2"].Value = nameFilm;
 
                     // Выполнить запрос на удаление без возвращения результата
                     myComm.ExecuteReader();
@@ -234,7 +234,7 @@ namespace Movie_DataBase
         {
             myConn.Open();
 
-            SqlDataAdapter sqlDa = new SqlDataAdapter("select * from Жанр", myConn);
+            SqlDataAdapter sqlDa = new SqlDataAdapter("select* from Жанр", myConn);
             DataTable dtbl = new DataTable();
             sqlDa.Fill(dtbl);
             FilmGenre.DisplayMember = "Жанр";

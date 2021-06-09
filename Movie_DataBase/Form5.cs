@@ -60,7 +60,7 @@ namespace Movie_DataBase
                 if (result == DialogResult.Yes)
                 {
                     // Создать команду для удаления
-                    SqlCommand myComm = new SqlCommand("delete dbo.Фильм where idФильм = @p1", myConn);
+                    SqlCommand myComm = new SqlCommand("execute delete_film @p1", myConn);
 
                     // Создать параметр и передать в него значение текстового поля 
                     myComm.Parameters.Add("@p1", SqlDbType.NVarChar, 10);
