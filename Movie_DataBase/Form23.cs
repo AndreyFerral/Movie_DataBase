@@ -104,7 +104,7 @@ namespace Movie_DataBase
                 myComm.Parameters.Add("@p3", SqlDbType.NVarChar, 100);
                 myComm.Parameters["@p3"].Value = week;
 
-                myComm.Parameters.Add("@p4", SqlDbType.NVarChar, 100);
+                myComm.Parameters.Add("@p4", SqlDbType.Money);
                 myComm.Parameters["@p4"].Value = cost;
 
                 myComm.Parameters.Add("@p5", SqlDbType.NVarChar, 100);

@@ -37,7 +37,7 @@ namespace Movie_DataBase
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             // Для того, чтобы не обновлялись значения, если нажатия происходит в одной строке
-            if (e.RowIndex != indexSelectRow)
+            if (e.RowIndex != indexSelectRow && e.RowIndex != -1)
             {
                 indexSelectRow = e.RowIndex;
 
@@ -91,7 +91,7 @@ namespace Movie_DataBase
                 myComm.Parameters.Add("@p3", SqlDbType.NVarChar, 100);
                 myComm.Parameters["@p3"].Value = Week;
 
-                myComm.Parameters.Add("@p4", SqlDbType.NVarChar, 100);
+                myComm.Parameters.Add("@p4", SqlDbType.Money);
                 myComm.Parameters["@p4"].Value = Cost;
 
                 myComm.Parameters.Add("@p5", SqlDbType.NVarChar, 100);
@@ -194,7 +194,6 @@ namespace Movie_DataBase
                 string DateProkat = dataGridView1[5, indexSelectRow].Value.ToString();
                 string Week = dataGridView1[6, indexSelectRow].Value.ToString();
                 string Cost = dataGridView1[7, indexSelectRow].Value.ToString();
-                Cost = Cost.Substring(0, Cost.LastIndexOf(',')); // удаляем лишние знаки
 
                 myConn.Open();
                 if (NumberDogovor.Trim() == "" || NameStaff.Trim() == "" ||
@@ -218,7 +217,7 @@ namespace Movie_DataBase
                 myComm.Parameters.Add("@p4", SqlDbType.NVarChar, 100);
                 myComm.Parameters["@p4"].Value = Week;
 
-                myComm.Parameters.Add("@p5", SqlDbType.NVarChar, 100);
+                myComm.Parameters.Add("@p5", SqlDbType.Money);
                 myComm.Parameters["@p5"].Value = Cost;
 
                 myComm.Parameters.Add("@p6", SqlDbType.NVarChar, 100);

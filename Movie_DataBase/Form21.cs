@@ -38,7 +38,7 @@ namespace Movie_DataBase
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             // Для того, чтобы не обновлялись значения, если нажатия происходит в одной строке
-            if (e.RowIndex != indexSelectRow)
+            if (e.RowIndex != indexSelectRow && e.RowIndex != -1)
             {
                 indexSelectRow = e.RowIndex;
 
@@ -100,7 +100,7 @@ namespace Movie_DataBase
                 myComm.Parameters.Add("@p4", SqlDbType.SmallDateTime);
                 myComm.Parameters["@p4"].Value = dateTime;
 
-                myComm.Parameters.Add("@p5", SqlDbType.NVarChar, 100);
+                myComm.Parameters.Add("@p5", SqlDbType.Money);
                 myComm.Parameters["@p5"].Value = cost;
 
                 // Выполнить запрос на изменение без возвращения результата
@@ -188,7 +188,7 @@ namespace Movie_DataBase
                 myComm.Parameters.Add("@p5", SqlDbType.SmallDateTime);
                 myComm.Parameters["@p5"].Value = dateTime;
 
-                myComm.Parameters.Add("@p6", SqlDbType.NVarChar, 100);
+                myComm.Parameters.Add("@p6", SqlDbType.Money);
                 myComm.Parameters["@p6"].Value = cost;
 
                 // Выполнить запрос на изменение без возвращения результата

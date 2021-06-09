@@ -31,7 +31,7 @@ namespace Movie_DataBase
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             // Для того, чтобы не обновлялись значения, если нажатия происходит в одной строке
-            if (e.RowIndex != indexSelectRow)
+            if (e.RowIndex != indexSelectRow && e.RowIndex != -1)
             {
                 indexSelectRow = e.RowIndex;
                 currentNameFilm = dataGridView1[0, indexSelectRow].Value.ToString();

@@ -30,7 +30,6 @@ namespace Movie_DataBase
             NamePostComboBox();
             NameFilmComboBox();
             NameDistribComboBox();
-
         }
 
         private void NumberDogovorComboBox()
@@ -154,7 +153,7 @@ namespace Movie_DataBase
                 myComm.Parameters.Add("@p4", SqlDbType.SmallDateTime);
                 myComm.Parameters["@p4"].Value = dateTime;
 
-                myComm.Parameters.Add("@p5", SqlDbType.NVarChar, 100);
+                myComm.Parameters.Add("@p5", SqlDbType.Money);
                 myComm.Parameters["@p5"].Value = costTiming;
 
                 myComm.Parameters.Add("@p6", SqlDbType.NVarChar, 100);
@@ -175,7 +174,7 @@ namespace Movie_DataBase
                 myComm.Parameters.Add("@p11", SqlDbType.NVarChar, 100);
                 myComm.Parameters["@p11"].Value = week;
 
-                myComm.Parameters.Add("@p12", SqlDbType.NVarChar, 100);
+                myComm.Parameters.Add("@p12", SqlDbType.Money);
                 myComm.Parameters["@p12"].Value = costProkat;
 
                 myComm.Parameters.Add("@p13", SqlDbType.NVarChar, 100);
