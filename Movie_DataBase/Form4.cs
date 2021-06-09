@@ -13,11 +13,6 @@ namespace Movie_DataBase
             InitializeComponent();
             this.myConn = myConn;
         }
-            
-        private void Form4_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -36,12 +31,6 @@ namespace Movie_DataBase
                 myComm.ExecuteNonQuery();
             }
             catch { MessageBox.Show("Исключение: Возможно вы ввели пустую строку", "Внимание!"); }
-
-        }
-
-
-        private void text1_TextChanged_1(object sender, EventArgs e)
-        {
 
         }
     }

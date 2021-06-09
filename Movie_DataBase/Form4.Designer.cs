@@ -40,7 +40,6 @@
             this.text1.Name = "text1";
             this.text1.Size = new System.Drawing.Size(277, 26);
             this.text1.TabIndex = 8;
-            this.text1.TextChanged += new System.EventHandler(this.text1_TextChanged_1);
             // 
             // label1
             // 
@@ -76,7 +75,6 @@
             this.Name = "Form4";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Добавление прокатчика";
-            this.Load += new System.EventHandler(this.Form4_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

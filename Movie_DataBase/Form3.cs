@@ -36,8 +36,6 @@ namespace Movie_DataBase
             dataGridView1.AutoGenerateColumns = false; dataGridView1.DataSource = dt; dataGridView1.Refresh();
         }
 
-
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) {
             indexSelectRow = e.RowIndex;
         }
@@ -73,7 +71,7 @@ namespace Movie_DataBase
                 if (result == DialogResult.Yes)
                 {
                     // Создать команду для удаления
-                    SqlCommand myComm = new SqlCommand("delete dbo.Прокатчик where idПрокатчик = @p1", myConn);
+                    SqlCommand myComm = new SqlCommand("execute delete_prokatchik @p1", myConn);
 
                     // Создать параметр и передать в него значение текстового поля 
                     myComm.Parameters.Add("@p1", SqlDbType.NVarChar, 10);
