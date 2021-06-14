@@ -72,6 +72,12 @@ namespace Movie_DataBase
 
                 // Отправляем изменения в БД
                 sda.Update(ds.Tables["Билетик"]);
+
+                // Очищаем таблицу
+                ds.Clear();
+
+                // Заполняем таблицу
+                sda.Fill(ds, "Билетик");
             }
             catch
             {

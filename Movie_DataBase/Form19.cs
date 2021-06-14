@@ -52,11 +52,6 @@ namespace Movie_DataBase
             }
         }
 
-        private void Form19_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void добавлениеToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Можно добавить бросание исключений на количество недель и даты
@@ -110,7 +105,8 @@ namespace Movie_DataBase
                 // Обновляем содержимое 
                 loadData();
             }
-            catch { myConn.Close();
+            catch { 
+                myConn.Close();
                 MessageBox.Show("Ошибка. Возможное решение:\n\n " +
                                 "1. Возможно вы пытаетесь добавить пустую строку.", "Внимание!");
             }

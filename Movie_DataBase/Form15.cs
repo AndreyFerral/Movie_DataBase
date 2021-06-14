@@ -8,7 +8,6 @@ namespace Movie_DataBase
     public partial class Form15 : Form
     {
         SqlConnection myConn = new SqlConnection();
-        int indexSelectRow;
         SqlCommand myComm = new SqlCommand("select*from Сотрудник");
         SqlDataAdapter sda = new SqlDataAdapter(); DataSet ds = new DataSet();
 
@@ -37,16 +36,6 @@ namespace Movie_DataBase
             dataGridView1.Refresh();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            indexSelectRow = e.RowIndex;
-        }
-        private void Form15_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            myConn.Close();
-            Application.Exit();
-        }
-
         private void добавлениеToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ds.Tables["Сотрудник"].Rows.Add();
@@ -63,7 +52,9 @@ namespace Movie_DataBase
                     dataGridView1.Rows.RemoveAt(rowIndex);
                 }
             }
-            catch { MessageBox.Show("Почему-то вызвалось исключение", "Внимание!"); }
+            catch {
+                MessageBox.Show("Почему-то вызвалось исключение", "Внимание!"); 
+            }
         }
 
         private void сохранениеToolStripMenuItem_Click(object sender, EventArgs e)
@@ -76,12 +67,18 @@ namespace Movie_DataBase
 
                 // Отправляем изменения в БД
                 sda.Update(ds.Tables["Сотрудник"]);
+
+                // Очищаем таблицу
+                ds.Clear();
+
+                // Заполняем таблицу
+                sda.Fill(ds, "Сотрудник");
             }
             catch
             {
                 MessageBox.Show("Ошибка. Возможное решение:\n\n " +
-                "1. Необходимо заполнить добавленную строку.\n\n " +
-                "2. Необходимо ввести номер, состоящий из 6 цифр.", "Внимание!");
+                " 1. Необходимо заполнить добавленную строку.\n\n " +
+                " 2. Необходимо ввести уникальный номер, состоящий из 6 цифр.\n\n", "Внимание!");
             }
         }
 
