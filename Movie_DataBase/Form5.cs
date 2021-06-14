@@ -10,11 +10,13 @@ namespace Movie_DataBase
         SqlConnection myConn = new SqlConnection();
         int indexSelectRow;
 
-        public Form5() {
+        public Form5() 
+        {
             InitializeComponent();
         }
 
-        private void Form5_Load(object sender, EventArgs e) {
+        private void Form5_Load(object sender, EventArgs e) 
+        {
             // Получаем строку подключения из параметров
             string StrConn = Properties.Settings.Default.ConnStr.ToString();
 
@@ -26,7 +28,8 @@ namespace Movie_DataBase
             loadData();
         }
 
-        private void loadData() {
+        private void loadData() 
+        {
             // Создаем команду для выборки данных
             SqlCommand myComm = new SqlCommand("select*from dbo.Фильм", myConn);
             SqlDataReader myReader = myComm.ExecuteReader();
@@ -36,12 +39,9 @@ namespace Movie_DataBase
             dataGridView1.AutoGenerateColumns = false; dataGridView1.DataSource = dt; dataGridView1.Refresh();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) {
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) 
+        {
             indexSelectRow = e.RowIndex;
-        }
-
-        private void Form5_FormClosing(object sender, FormClosingEventArgs e) {
-            myConn.Close();
         }
 
         private void назадToolStripMenuItem_Click(object sender, EventArgs e)
@@ -63,7 +63,7 @@ namespace Movie_DataBase
                     SqlCommand myComm = new SqlCommand("execute delete_film @p1", myConn);
 
                     // Создать параметр и передать в него значение текстового поля 
-                    myComm.Parameters.Add("@p1", SqlDbType.NVarChar, 10);
+                    myComm.Parameters.Add("@p1", SqlDbType.Int);
                     DataGridViewRow SelectedRow = dataGridView1.Rows[indexSelectRow];
                     myComm.Parameters["@p1"].Value = SelectedRow.Cells[0].Value.ToString();
 

@@ -9,7 +9,7 @@ namespace Movie_DataBase
     {
         SqlConnection myConn = new SqlConnection();
         int indexSelectRow;
-        SqlCommand myComm = new SqlCommand("select*from Билетик");
+        SqlCommand myComm = new SqlCommand("select*from dbo.Билетик");
         SqlDataAdapter sda = new SqlDataAdapter(); DataSet ds = new DataSet();
 
         public Form17()
@@ -26,6 +26,8 @@ namespace Movie_DataBase
             myConn.ConnectionString = StrConn;
             myConn.Open();
 
+            loadDataComboBox();
+
             // Выборка создания и заполнения в DataSet таблицы
             myComm.Connection = myConn;
             sda.SelectCommand = myComm;
@@ -35,14 +37,10 @@ namespace Movie_DataBase
             dataGridView1.DataSource = ds.Tables["Билетик"];
             dataGridView1.Refresh();
         }
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             indexSelectRow = e.RowIndex;
-        }
-        private void Form17_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            myConn.Close();
-            Application.Exit();
         }
 
         private void добавлениеToolStripMenuItem_Click(object sender, EventArgs e)
@@ -101,6 +99,21 @@ namespace Movie_DataBase
 
             Form18 form18 = new Form18(numberRyad, numberMesto, numberTiming);
             form18.ShowDialog();
+        }
+
+        private void loadDataComboBox()
+        {
+            SqlDataAdapter sqlDa = new SqlDataAdapter("select idРасписание, " +
+                "CONCAT(idРасписание, ' - ', CONVERT(nvarchar(100), Дата_время, 4), ' ', " +
+                "CONVERT(nvarchar(100), Дата_время, 8),' - ', Фильм) AS info " +
+                "from dbo.View_TicketInfo ORDER BY idРасписание", myConn);
+
+            DataTable dtbl = new DataTable();
+            sqlDa.Fill(dtbl);
+
+            timing.DataSource = dtbl; // Источник
+            timing.ValueMember = "idРасписание"; // Реальное значение
+            timing.DisplayMember = "info"; // Отображаемое значение
         }
     }
 }

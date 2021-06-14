@@ -31,12 +31,12 @@ namespace Movie_DataBase
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.добавлениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.добавлениеToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.удалениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сохранениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.информацияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.назадToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.добавлениеToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.id_timing = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dogovor_number = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.hall_name = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -58,7 +58,7 @@ namespace Movie_DataBase
             this.назадToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(784, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(884, 24);
             this.menuStrip1.TabIndex = 17;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -68,6 +68,13 @@ namespace Movie_DataBase
             this.добавлениеToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
             this.добавлениеToolStripMenuItem.Text = "Добавление";
             this.добавлениеToolStripMenuItem.Click += new System.EventHandler(this.добавлениеToolStripMenuItem_Click);
+            // 
+            // добавлениеToolStripMenuItem1
+            // 
+            this.добавлениеToolStripMenuItem1.Name = "добавлениеToolStripMenuItem1";
+            this.добавлениеToolStripMenuItem1.Size = new System.Drawing.Size(94, 20);
+            this.добавлениеToolStripMenuItem1.Text = "Добавление+";
+            this.добавлениеToolStripMenuItem1.Click += new System.EventHandler(this.добавлениеToolStripMenuItem1_Click);
             // 
             // удалениеToolStripMenuItem
             // 
@@ -112,21 +119,13 @@ namespace Movie_DataBase
             this.dataGridView1.Location = new System.Drawing.Point(0, 24);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(784, 437);
+            this.dataGridView1.Size = new System.Drawing.Size(884, 437);
             this.dataGridView1.TabIndex = 23;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // добавлениеToolStripMenuItem1
-            // 
-            this.добавлениеToolStripMenuItem1.Name = "добавлениеToolStripMenuItem1";
-            this.добавлениеToolStripMenuItem1.Size = new System.Drawing.Size(94, 20);
-            this.добавлениеToolStripMenuItem1.Text = "Добавление+";
-            this.добавлениеToolStripMenuItem1.Click += new System.EventHandler(this.добавлениеToolStripMenuItem1_Click);
-            // 
             // id_timing
             // 
-            this.id_timing.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.id_timing.DataPropertyName = "idРасписание";
             this.id_timing.HeaderText = "Номер расписания";
             this.id_timing.Name = "id_timing";
@@ -137,7 +136,7 @@ namespace Movie_DataBase
             this.dogovor_number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dogovor_number.DataPropertyName = "Прокат_фильма_Номер_договора";
             this.dogovor_number.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dogovor_number.HeaderText = "Номер проката";
+            this.dogovor_number.HeaderText = "Договор";
             this.dogovor_number.Name = "dogovor_number";
             this.dogovor_number.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dogovor_number.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
@@ -145,7 +144,7 @@ namespace Movie_DataBase
             // hall_name
             // 
             this.hall_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.hall_name.DataPropertyName = "Название";
+            this.hall_name.DataPropertyName = "Зал";
             this.hall_name.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.hall_name.HeaderText = "Зал";
             this.hall_name.Name = "hall_name";
@@ -170,11 +169,10 @@ namespace Movie_DataBase
             this.datetime.DataPropertyName = "Дата_время";
             this.datetime.HeaderText = "Дата и время";
             this.datetime.Name = "datetime";
-            this.datetime.Width = 137;
+            this.datetime.Width = 125;
             // 
             // cost
             // 
-            this.cost.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.cost.DataPropertyName = "Стоимость";
             this.cost.HeaderText = "Стоимость";
             this.cost.Name = "cost";
@@ -183,7 +181,7 @@ namespace Movie_DataBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 461);
+            this.ClientSize = new System.Drawing.Size(884, 461);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);

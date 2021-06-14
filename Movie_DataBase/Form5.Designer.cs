@@ -106,7 +106,6 @@
             // 
             // idФильм
             // 
-            this.idФильм.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.idФильм.DataPropertyName = "idФильм";
             this.idФильм.HeaderText = "Номер фильма";
             this.idФильм.Name = "idФильм";
@@ -123,19 +122,20 @@
             // 
             // Описание
             // 
+            this.Описание.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Описание.DataPropertyName = "Описание";
             this.Описание.HeaderText = "Описание";
             this.Описание.Name = "Описание";
             this.Описание.ReadOnly = true;
-            this.Описание.Width = 300;
             // 
             // Длительность
             // 
-            this.Длительность.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Длительность.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Длительность.DataPropertyName = "Длительность";
             this.Длительность.HeaderText = "Длительность";
             this.Длительность.Name = "Длительность";
             this.Длительность.ReadOnly = true;
+            this.Длительность.Width = 146;
             // 
             // Form5
             // 

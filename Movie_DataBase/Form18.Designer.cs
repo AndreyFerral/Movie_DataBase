@@ -136,15 +136,15 @@ namespace Movie_DataBase
             // id_prokat
             // 
             this.id_prokat.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.id_prokat.DataPropertyName = "Прокат_фильма_Номер_договора";
-            this.id_prokat.HeaderText = "Номер проката";
+            this.id_prokat.DataPropertyName = "info";
+            this.id_prokat.HeaderText = "Договор";
             this.id_prokat.Name = "id_prokat";
             this.id_prokat.ReadOnly = true;
             // 
             // id_hall
             // 
             this.id_hall.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.id_hall.DataPropertyName = "Название";
+            this.id_hall.DataPropertyName = "Зал";
             this.id_hall.HeaderText = "Зал";
             this.id_hall.Name = "id_hall";
             this.id_hall.ReadOnly = true;

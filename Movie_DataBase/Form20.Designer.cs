@@ -48,10 +48,6 @@ namespace Movie_DataBase
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idФильм = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Название = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Описание = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.idProkat = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,6 +58,10 @@ namespace Movie_DataBase
             this.name_staff = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.s_post = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idФильм = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Название = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Описание = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -272,40 +272,6 @@ namespace Movie_DataBase
             this.dataGridView1.Size = new System.Drawing.Size(808, 90);
             this.dataGridView1.TabIndex = 24;
             // 
-            // idФильм
-            // 
-            this.idФильм.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.idФильм.DataPropertyName = "idФильм";
-            this.idФильм.HeaderText = "Номер фильма";
-            this.idФильм.Name = "idФильм";
-            this.idФильм.ReadOnly = true;
-            this.idФильм.Width = 138;
-            // 
-            // Название
-            // 
-            this.Название.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Название.DataPropertyName = "Название";
-            this.Название.HeaderText = "Название фильма";
-            this.Название.Name = "Название";
-            this.Название.ReadOnly = true;
-            this.Название.Width = 159;
-            // 
-            // Описание
-            // 
-            this.Описание.DataPropertyName = "Описание";
-            this.Описание.HeaderText = "Описание";
-            this.Описание.Name = "Описание";
-            this.Описание.ReadOnly = true;
-            this.Описание.Width = 300;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Длительность";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Длительность";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
@@ -406,6 +372,39 @@ namespace Movie_DataBase
             this.number.Name = "number";
             this.number.ReadOnly = true;
             // 
+            // idФильм
+            // 
+            this.idФильм.DataPropertyName = "idФильм";
+            this.idФильм.HeaderText = "Номер фильма";
+            this.idФильм.Name = "idФильм";
+            this.idФильм.ReadOnly = true;
+            // 
+            // Название
+            // 
+            this.Название.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Название.DataPropertyName = "Название";
+            this.Название.HeaderText = "Фильм";
+            this.Название.Name = "Название";
+            this.Название.ReadOnly = true;
+            this.Название.Width = 88;
+            // 
+            // Описание
+            // 
+            this.Описание.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Описание.DataPropertyName = "Описание";
+            this.Описание.HeaderText = "Описание";
+            this.Описание.Name = "Описание";
+            this.Описание.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Длительность";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Длительность";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 146;
+            // 
             // Form20
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -471,15 +470,15 @@ namespace Movie_DataBase
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idФильм;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Название;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Описание;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idProkat;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameProkat;
         private System.Windows.Forms.DataGridViewTextBoxColumn number_Staff;
         private System.Windows.Forms.DataGridViewTextBoxColumn name_staff;
         private System.Windows.Forms.DataGridViewTextBoxColumn s_post;
         private System.Windows.Forms.DataGridViewTextBoxColumn number;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idФильм;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Название;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Описание;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
     }
 }

@@ -159,7 +159,6 @@ namespace Movie_DataBase
                 string nameHall = dataGridView1[3, indexSelectRow].Value.ToString();
                 string dateTime = dataGridView1[4, indexSelectRow].Value.ToString();
                 string cost = dataGridView1[5, indexSelectRow].Value.ToString();
-                cost = cost.Substring(0, cost.LastIndexOf(',')); // удаляем лишние знаки
 
                 myConn.Open();
 
@@ -183,8 +182,6 @@ namespace Movie_DataBase
                 myComm.Parameters.Add("@p4", SqlDbType.NVarChar, 100);
                 myComm.Parameters["@p4"].Value = nameStaff;
 
-                DateTime myTime = DateTime.Parse(dateTime);
-                dateTime = myTime.ToString("yyyy-MM-dd HH:mm:ss");
                 myComm.Parameters.Add("@p5", SqlDbType.SmallDateTime);
                 myComm.Parameters["@p5"].Value = dateTime;
 
@@ -250,6 +247,7 @@ namespace Movie_DataBase
 
             myConn.Close();
         }
+
         private void loadData2ComboBox()
         {
             myConn.Open();
@@ -267,11 +265,13 @@ namespace Movie_DataBase
         {
             myConn.Open();
 
-            SqlDataAdapter sqlDa = new SqlDataAdapter("select Номер_договора from Прокат_фильма", myConn);
+            SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT Номер_договора, CONCAT(Номер_договора, ' - ', Фильм) AS info from dbo.View_Dogovor ORDER BY Номер_договора", myConn);
             DataTable dtbl = new DataTable();
             sqlDa.Fill(dtbl);
-            dogovor_number.DisplayMember = "Номер_договора";
-            dogovor_number.DataSource = dtbl;
+
+            dogovor_number.DataSource = dtbl; // Источник
+            dogovor_number.ValueMember = "Номер_договора"; // Реальное значение
+            dogovor_number.DisplayMember = "info"; // Отображаемое значение
 
             myConn.Close();
         }
@@ -279,7 +279,7 @@ namespace Movie_DataBase
         private void loadData()
         {
             myConn.Open();
-            SqlCommand myComm = new SqlCommand("select idРасписание, Прокат_фильма_Номер_договора, ФИО, Название, Дата_время, Стоимость from dbo.View_Timing", myConn);
+            SqlCommand myComm = new SqlCommand("select*from dbo.View_Timing", myConn);
 
             SqlDataReader myReader = myComm.ExecuteReader();
             DataTable dtbl = new DataTable(); dtbl.Load(myReader);
@@ -296,13 +296,14 @@ namespace Movie_DataBase
             myConn.Close();
 
             indexSelectRow = 0;
-
+            
             curNumberTiming = dataGridView1[0, indexSelectRow].Value.ToString();
             curNumberDogovor = dataGridView1[1, indexSelectRow].Value.ToString();
             curNameStaff = dataGridView1[2, indexSelectRow].Value.ToString();
             curNameHall = dataGridView1[3, indexSelectRow].Value.ToString();
             curDateTime = dataGridView1[4, indexSelectRow].Value.ToString();
             curCost = dataGridView1[5, indexSelectRow].Value.ToString();
+            
         }
     }
 }

@@ -37,8 +37,8 @@ namespace Movie_DataBase
 
         private void loadData()
         {
-            // Создать команду для удаления
-            SqlCommand myComm = new SqlCommand("select*from dbo.View_Timing WHERE idРасписание = @p1", myConn);
+            // Создать команду для выборки
+            SqlCommand myComm = new SqlCommand("select*, CONCAT(Прокат_фильма_Номер_договора, ' - ', Фильм) AS info from dbo.View_TicketInfo WHERE idРасписание = @p1", myConn);
 
             // Создать параметр и передать в него значение текстового поля 
             myComm.Parameters.Add("@p1", SqlDbType.NVarChar, 100);

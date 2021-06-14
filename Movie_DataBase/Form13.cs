@@ -43,11 +43,6 @@ namespace Movie_DataBase
             }
         }
 
-        private void Form10_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void добавлениеToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             try
@@ -76,7 +71,8 @@ namespace Movie_DataBase
                 // Обновляем содержимое 
                 loadData();
             }
-            catch { myConn.Close();
+            catch { 
+                myConn.Close();
                 MessageBox.Show("Ошибка. Возможное решение:\n\n " +
                                 "1. Возможно вы пытаетесь добавить пустую строку.", "Внимание!");
             }
@@ -193,6 +189,7 @@ namespace Movie_DataBase
 
             myConn.Close();
         }
+
         private void loadData2ComboBox()
         {
             myConn.Open();
@@ -217,8 +214,8 @@ namespace Movie_DataBase
             myConn.Close();
 
             indexSelectRow = 0;
-            currentNameFilmGenre = dataGridView1[0, indexSelectRow].Value.ToString();
-            currentNameFilm = dataGridView1[1, indexSelectRow].Value.ToString();
+            currentNameFilm = dataGridView1[0, indexSelectRow].Value.ToString();
+            currentNameFilmGenre = dataGridView1[1, indexSelectRow].Value.ToString();
         }
     }
 }

@@ -44,6 +44,7 @@ namespace Movie_DataBase
             textBox5.Text = dateD;
             textBox6.Text = costDogovor;
         }
+
         private void loadData1()
         {
             SqlCommand myComm = new SqlCommand("select*from dbo.View_Dogovor WHERE Номер_Договора = @p1", myConn);
@@ -57,6 +58,7 @@ namespace Movie_DataBase
             DataTable dt = new DataTable(); dt.Load(myReader);
             dataGridView1.AutoGenerateColumns = false; dataGridView1.DataSource = dt; dataGridView1.Refresh();
         }
+
         private void loadData2()
         {
             SqlCommand myComm = new SqlCommand("select*from dbo.Сотрудник WHERE ФИО = @p1", myConn);
@@ -70,6 +72,7 @@ namespace Movie_DataBase
             DataTable dt = new DataTable(); dt.Load(myReader);
             dataGridView2.AutoGenerateColumns = false; dataGridView2.DataSource = dt; dataGridView2.Refresh();
         }
+
         private void loadData3()
         {
             SqlCommand myComm = new SqlCommand("select*from dbo.Зал WHERE Название = @p1", myConn);

@@ -38,7 +38,7 @@ namespace Movie_DataBase
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ryad1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mesto1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.timing = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timing = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -88,7 +88,7 @@ namespace Movie_DataBase
             this.назадToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(484, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(584, 24);
             this.menuStrip1.TabIndex = 13;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -104,21 +104,19 @@ namespace Movie_DataBase
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 24);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(484, 437);
+            this.dataGridView1.Size = new System.Drawing.Size(584, 437);
             this.dataGridView1.TabIndex = 14;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // ryad1
             // 
-            this.ryad1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ryad1.DataPropertyName = "Ряд";
             this.ryad1.HeaderText = "Ряд";
             this.ryad1.Name = "ryad1";
             // 
             // mesto1
             // 
-            this.mesto1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.mesto1.DataPropertyName = "Место";
             this.mesto1.HeaderText = "Место";
             this.mesto1.Name = "mesto1";
@@ -127,14 +125,17 @@ namespace Movie_DataBase
             // 
             this.timing.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.timing.DataPropertyName = "Расписание_idРасписание";
-            this.timing.HeaderText = "Номер расписания";
+            this.timing.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.timing.HeaderText = "Расписание";
             this.timing.Name = "timing";
+            this.timing.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.timing.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // Form17
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 461);
+            this.ClientSize = new System.Drawing.Size(584, 461);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -162,6 +163,6 @@ namespace Movie_DataBase
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ryad1;
         private System.Windows.Forms.DataGridViewTextBoxColumn mesto1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn timing;
+        private System.Windows.Forms.DataGridViewComboBoxColumn timing;
     }
 }
