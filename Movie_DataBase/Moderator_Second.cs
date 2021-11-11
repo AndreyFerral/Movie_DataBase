@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace Movie_DataBase
 {
-    public partial class Form2 : Form
+    public partial class Moderator_Second : Form
     {
-        public Form2()
+        public Moderator_Second()
         {
             InitializeComponent();
         }
@@ -42,14 +42,6 @@ namespace Movie_DataBase
             Close();
         }
 
-        private void btnStaff_Click(object sender, EventArgs e)
-        {
-            Hide();
-            Form15 form15 = new Form15();
-            form15.ShowDialog();
-            Close();
-        }
-
         private void btnHall_Click(object sender, EventArgs e)
         {
             Hide();
@@ -71,22 +63,6 @@ namespace Movie_DataBase
             Hide();
             Form21 form21 = new Form21();
             form21.ShowDialog();
-            Close();
-        }
-
-        private void btnDistrib_Click(object sender, EventArgs e)
-        {
-            Hide();
-            Form3 form3 = new Form3();
-            form3.ShowDialog();
-            Close();
-        }
-
-        private void btnContract_Click(object sender, EventArgs e)
-        {
-            Hide();
-            Form19 form19 = new Form19();
-            form19.ShowDialog();
             Close();
         }
     }

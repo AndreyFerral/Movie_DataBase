@@ -5,6 +5,7 @@ using System.Windows.Forms;
 
 namespace Movie_DataBase {
     public partial class Form1 : Form {
+
         public Form1() {
             InitializeComponent();
         }
@@ -34,14 +35,22 @@ namespace Movie_DataBase {
                 // Проверка, установлено ли соединение с БД
                 if (MainConn.State == ConnectionState.Open) 
                 {
-                    // Если подключение прошло успешно, тосохраняем строку в параметры 
-                    Properties.Settings.Default.ConnStr = StrConn; 
+                    // Если подключение прошло успешно, то сохраняем строку в параметры 
+                    Properties.Settings.Default.ConnStr = StrConn;
+
+                    // Program.getCurrentUser(MainConn);
+
                     MainConn.Close();
 
-                    // Переходим на следующую форму
+                    // Переходим на следующую форму в зависимости от логина
+                    if (txtUserName.Text == "Moderator_Second" || txtUserName.Text == "Mod_Second")
+                    {
+                        // Устанавливаем стартовую форму для модератора второго уровня
+                        Properties.Settings.Default.StartForm = 1;
+                    }
+
                     Hide();
-                    Form2 form2 = new Form2();
-                    form2.ShowDialog();
+                    Program.returnToStartForm();
                     Close();
                 }
                 // Если подключение не установлено, то выводим сообщение
@@ -54,13 +63,28 @@ namespace Movie_DataBase {
         }
 
         private void cmbTypeAutor_SelectionChangeCommitted(object sender, EventArgs e) {
-            if (cmbTypeAutor.SelectedIndex != 0) {
-                txtUserName.Enabled = true; 
-                txtPass.Enabled = true;
-            }
-            else {
-                txtUserName.Enabled = false; 
+
+            // Если выбрана аутентификация по пользователю Windows
+            if (cmbTypeAutor.SelectedIndex == 0) {
+
+                txtUserName.Text = "";
+                txtUserName.Enabled = false;
+
+                txtPass.Text = "";
                 txtPass.Enabled = false;
+
+                // Роль приложения не будет активирована
+                Properties.Settings.Default.IsRoleApp = false;
+
+            }
+            // Если выбрана аутентификация по логину и паролю
+            else
+            {
+                txtUserName.Enabled = true;
+                txtPass.Enabled = true;
+
+                // Следовательно, необходимо будет активировать роль приложения
+                Properties.Settings.Default.IsRoleApp = true;
             }
 
         }

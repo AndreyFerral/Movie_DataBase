@@ -18,11 +18,11 @@ namespace Movie_DataBase
 
         private void Form10_Load(object sender, EventArgs e)
         {
-            // Получаем строку подключения из параметров
-            string StrConn = Properties.Settings.Default.ConnStr.ToString();
+            // Открываем соединение
+            Program.openConnection(myConn);
 
-            // Создаем подключение 
-            myConn.ConnectionString = StrConn;
+            // Закрываем подключение, т.к. оно было открыто в пред функции
+            myConn.Close();
 
             loadDataComboBox(); // Заполняем объект типа ComboBox
             loadData();         // Запускаем процедуру выборки данных
@@ -47,8 +47,7 @@ namespace Movie_DataBase
         private void назадToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Hide();
-            Form2 form2 = new Form2();
-            form2.ShowDialog();
+            Program.returnToStartForm();
             Close();
         }
 

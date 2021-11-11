@@ -19,12 +19,8 @@ namespace Movie_DataBase
 
         private void Form9_Load(object sender, EventArgs e)
         {
-            // Получаем строку подключения из параметров
-            string StrConn = Properties.Settings.Default.ConnStr.ToString();
-
-            // Создаем подключение 
-            myConn.ConnectionString = StrConn;
-            myConn.Open();
+            // Открываем соединение
+            Program.openConnection(myConn);
 
             // Выборка создания и заполнения в DataSet таблицы с жанрами
             myComm.Connection = myConn;
@@ -51,8 +47,7 @@ namespace Movie_DataBase
         private void назадToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Hide();
-            Form2 form2 = new Form2();
-            form2.ShowDialog();
+            Program.returnToStartForm();
             Close();
         }
 

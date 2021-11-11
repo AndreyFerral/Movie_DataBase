@@ -17,7 +17,19 @@ namespace Movie_DataBase.Properties
     {
 
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
+
+        // Строка подключения
         internal string ConnStr;
+
+        // Запрос на включение роли приложения
+        internal string RoleApp = "EXECUTE sys.sp_setapprole 'app', '123';";
+
+        // Выбрана ли роль приложения
+        internal bool IsRoleApp = false;
+
+        // Стартовая форма при нажатии "Назад".
+        // 0 - полноценная, 1 - модератор второго уровня
+        internal int StartForm = 0;
 
         public static Settings Default
         {
